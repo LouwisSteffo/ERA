@@ -1,81 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static' , filename="css/style-loginregister.css")}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style-loginregister.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <title>Home Page</title>
-</head>
-<body>
-    <div class="container" id = "container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Buat Akun</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-google"></i>
-                    </a>
-                    <!-- <a href="#" class="icon">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a> -->
-                </div>
-                <span>atau gunakan email Anda untuk pendaftaran</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Daftar</button>
-            </form>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <form action="" method="POST">
+          <h1>Buat Akun</h1>
+          <span>atau gunakan email Anda untuk pendaftaran</span>
+          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Nama" />
+          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="NomorTelpon" />
+          <input type="password" placeholder="Password" />
+          <button>Daftar</button>
+        </form>
+      </div>
+      <!-- Masuk -->
+      <div class="form-container sign-in">
+        <form>
+          <h1>Masuk</h1>
+          <span>atau gunakan password email Anda</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Lupa Password Anda?</a>
+          <button>Masuk</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Selamat Datang!</h1>
+            <p>Masukkan detail pribadi Anda untuk menggunakan semua fitur situs</p>
+            <button class="hidden" id="login">Masuk</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Halo, ERAzen!</h1>
+            <p>Daftarkan dengan detail pribadi Anda untuk menjadi bagian dari ERAzen</p>
+            <button class="hidden" id="register">Daftar</button>
+          </div>
         </div>
-        <!-- Masuk -->
-        <div class="form-container sign-in">
-            <form >
-                <h1>Masuk</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon Tes">
-                        <i class="fa-brands fa-google"></i>
-                    </a>
-                    <!-- <a href="#" class="icon">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a> -->
-                </div>
-                <span>atau gunakan password email Anda</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Lupa Password Anda?</a>
-                <button>Masuk</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Selamat Datang!</h1>
-                    <p>Masukkan detail pribadi Anda untuk menggunakan semua fitur situs</p>
-                    <button class="hidden" id="login">Masuk</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Halo, ERAzen!</h1>
-                    <p>Daftarkan dengan detail pribadi Anda untuk menjadi bagian dari ERAzen</p>
-                    <button class="hidden" id="register">Daftar</button>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-        
-<script src="{{url_for('static' , filename="js/script-loginregister.js")}}"></script>
-</body>
-<script>
-    var tes = document.querySelector('.Tes');
-    tes.addEventListener('click', function(){
-        tes.style.backgroundColor = 'red';
-    });
 
+    <script src="{{ url_for('static', filename = 'js/script-loginregister.js') }}"></script>
+  </body>
+  <script>
+    var tes = document.querySelector('.Tes')
+    tes.addEventListener('click', function () {
+      tes.style.backgroundColor = 'red'
+    })
+    
     tes.addEventListener('mouseover')
-</script>
+  </script>
 </html>

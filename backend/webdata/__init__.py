@@ -2,7 +2,7 @@ from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_login import LoginManager
+# from flask_login import LoginManager
 
 from webdata.config import Config
 
@@ -19,7 +19,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 # auth = LoginManager(app)
 
-# auth.login_view = 'main.login'
+# auth.login_view = 'main.home'
 # auth.login_message = 'Please login to proceed!'
 # auth.login_message_category = 'warning'
 
