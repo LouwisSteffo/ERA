@@ -1,12 +1,12 @@
-from webdata import db
+from webdata import db, auth
 from flask_login import UserMixin
 from datetime import datetime
 import locale
 
 # locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
-# @auth.user_loader
-# def load_user(user_id):
-#     return Pengguna.query.get(int(user_id)) 
+@auth.user_loader
+def load_user(user_id):
+    return Pengguna.query.get(int(user_id)) 
 
 class Pengguna(db.Model, UserMixin):
     __tablename__ = 'pengguna'
@@ -16,7 +16,7 @@ class Pengguna(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     nomor_telepon = db.Column(db.String(20), unique=True, nullable=False)
     foto_profil = db.Column(db.String(100), nullable=True, default='default.jpg')
-    alamat = db.Column(db.String(100), nullable=False)
+    alamat = db.Column(db.String(100), nullable=True)
     poin = db.Column(db.Integer, nullable=False, default=0)
     password = db.Column(db.String(300), nullable=False)
     
