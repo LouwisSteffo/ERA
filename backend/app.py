@@ -1,5 +1,13 @@
+<<<<<<< HEAD
+from webdata import app
+
+if __name__ == "__main__":
+    with app.app_context():
+        app.run(debug=True)
+=======
 from webdata import app
 
 if __name__ == "__main__":
     with app.app_context():
         app.run(debug=True , host='0.0.0.0' , port=5000)
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9

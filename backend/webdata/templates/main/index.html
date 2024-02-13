@@ -1,5 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Existing Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Existing Font Awesome Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <!-- Existing MDB Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Additional Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Additional Font Awesome Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename = 'lib/animate/animate.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename = 'lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename = 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename ='css/style.css') }}" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    body{
+      font-family: "Montserrat";
+    }
+    .warna-dropdown:hover {
+      background-color: #299e63;
+      color: #ffff;
+    }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .NavItems {
+      gap: 20px;
+  }
+
+  .ButtonProfile {
+      padding-top: 17px;
+      padding-bottom: 17px;
+      padding-left: 40px;
+      padding-right: 40px;
+      background-color: #299e63;
+  }
+
+  .WarnaHijau {
+      background-color: #299e63;
+  }
+
+  .ContainerGap {
+      margin-top: 100px;
+  }
+=======
 
 <head>
   <meta charset="utf-8" />
@@ -82,6 +159,7 @@
     margin-top: 100px;
   }
 
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
   .FooterClass {
     bottom: 0;
     width: 100%;
@@ -94,6 +172,21 @@
     font-size: 15px;
     font-weight: 400;
   }
+<<<<<<< HEAD
+  .flexOpt {
+    width: 50%;
+  }
+  .WarnaIjo {
+    color: #299e63;
+  }
+  .TitleArticle{
+    margin-top: 11  0px;
+  }
+  .ContainerImage {
+      scale: 1.4;
+      margin-top: -30px;
+  }
+=======
 
   .flexOpt {
     width: 50%;
@@ -112,6 +205,7 @@
     margin-top: -30px;
   }
 
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
   footer p {
     color: #878787;
     font-family: Montserrat;
@@ -120,6 +214,114 @@
     font-weight: 400;
     line-height: normal;
     justify-content: center;
+<<<<<<< HEAD
+    }
+  .w-20 {
+      width: 20%;
+  }
+
+  .rounded-xl {
+      border-radius: 20px;
+  }
+  .mt-7{
+      margin-top: 110px;
+  }
+  </style>
+
+  <body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="top-0 z-3 w-100 position-fixed d-flex bg-white justify-content-between align-items-center">
+      <div class="ml-5 mt-1">
+          <img src="{{url_for('static' , filename="img/era.png")}}" height="49" alt="">
+      </div>
+      <div class="d-flex flex-row">
+          <div class="d-flex flex-row NavItems align-items-center">
+              <div>
+                  <a class="  text-decoration-none font-weight-normal text-dark" href="home.html">Beranda</a>
+              </div>
+              <div class="ml-2">
+                  <div class="">
+                      <button class="bg-white border-0 dropdown-toggle" type="button" id="dropdownMenuButton"
+                          data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false">
+                          Services
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Rekomendasi Pemanfaatan Limbah Elektronik</a></li>
+                          <li><a class="dropdown-item" href="#">Penjemputan Limbah Elektronik</a></li>
+                          <li><a class="dropdown-item" href="#">Artikel</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="ml-2">
+                  <a class="text-decoration-none font-weight-normal text-dark" href="">Bantuan</a>
+              </div>
+          </div>
+
+          {% if current_user.is_authenticated %}
+          <div class="ml-4 d-flex ButtonProfile flex-row justify-content-between align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle"
+                viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+            <p class="h5 text-white ml-2 mb-0">{{current_user.nama_pengguna}}</p>
+        </div>
+          {% else %}
+          <div class="ml-4 d-flex ButtonProfile flex-row justify-content-between align-items-center">
+            <a href="{{ url_for('auth.login') }}" class="btn btn-success">Login</a>
+          </div>
+          {% endif %}
+      </div>
+      </div>
+  </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid header bg-success p-0 mb-5">
+      <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+        <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
+          <div class="owl-carousel header-carousel">
+            <div class="owl-carousel-item position-relative">
+              <img class="img-fluid" src="{{url_for('static' , filename="figma/homepage/homepage1.png")}}" alt="" />
+              <div class="owl-carousel-text" style="display: flex; flex-direction: column;">
+                <div class="logo">
+                  <img src="{{url_for('static' , filename ="figma/homepage/era.png")}}" style="width:fit-content;" />
+                </div>
+                <div class="title" style="width: 40%;">
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+                </div>
+              </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+              <img class="img-fluid" src="{{url_for('static' , filename="figma/homepage/homepage2.png")}}" alt="" />
+              <div class="owl-carousel-text" style="display: flex; flex-direction: column;">
+                <div class="logo">
+                  <img src="{{url_for('static' , filename ="figma/homepage/era.png")}}" />
+                </div>
+                <div class="title" style="width: 40%;">
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+                </div>
+              </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+              <img class="img-fluid" src="{{url_for('static' , filename="figma/homepage/homepage3.png")}}" alt="" />
+              <div class="owl-carousel-text" style="display: flex; flex-direction: column;">
+                <div class="logo">
+                  <img src="{{url_for('static' , filename ="figma/homepage/era.png")}}" />
+                </div>
+                <div class="title" style="width: 40%;">
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+                </div>
+=======
   }
 
   .w-20 {
@@ -255,12 +457,53 @@
               <div class="title" style="width: 40%;">
                 <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor
                   sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <!-- Header End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5" style=" margin-top: -3%">
+      <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
+          <h1 class="d-block py-3 px-4" style="background-color: #299e63;color: white;font-size:  32.544px; border-radius: 7.5px; ">Layanan Kami</h1>
+        </div>
+
+        <div class="row justify-content-center g-4" style="margin-top: 20px">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="rounded h-100 p-5" style="background-color: #299e63; text-align: center; margin-right: 10%;">
+              <img src="{{url_for('static' , filename="figma/homepage/penjemputanbarang.png")}}" class="img-thumbnail" alt="" />
+              <h4 class="mb-3" style="color: white; margin-top: 20px">Penjemputan Barang</h4>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="rounded h-100 p-5" style="background-color: #299e63; text-align: center;margin-left: 10%;">
+              <img src="{{url_for('static' , filename="figma/homepage/artikel.png")}}" class="img-thumbnail" alt="" />
+              <h4 class="mb-3" style="color: white; margin-top: 20px">Artikel</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center g-4" style="margin-top: 20px">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="rounded h-100 p-5" style="background-color: #299e63; text-align: center;margin-right: 10%;">
+              <img src="{{url_for('static' , filename="figma/homepage/rekomendasi.png")}}" class="img-thumbnail" alt="" />
+              <h4 class="mb-3" style="color: white; margin-top: 20px">Rekomendasi</h4>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="rounded h-100 p-5" style="background-color: #299e63; text-align: center; margin-left: 10%;">
+              <img src="{{url_for('static' , filename="figma/homepage/penukaranpoin.png")}}" class="img-thumbnail" alt="" />
+              <h4 class="mb-3" style="color: white; margin-top: 20px">Penukaran Poin</h4>
+            </div>
+=======
   </div>
   <!-- Header End -->
 
@@ -303,10 +546,35 @@
             <img src="{{url_for('static' , filename="figma/homepage/penukaranpoin.png")}}" class="img-thumbnail"
               alt="" />
             <h4 class="mb-3" style="color: white; margin-top: 20px">Penukaran Poin</h4>
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <!-- Service End -->
+
+    <!-- Div Nama" Tiap Layanan -->
+
+    <!-- Penjemputan Barang Start -->
+    <div class="container-fluid py-5" style="margin-top: 5%;background-color: #EBEBEB;padding:3%;">
+      <div class="container">
+        <!-- Ini Judul Tiap Layanan -->
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -3%;">
+          <h1 style="color: #299e63; margin-top: 5%;">Penjemputan Barang</h1>
+        </div>
+        <!-- Ini Isi Tiap Layanan -->
+        <div class="row g-4" style="height: 30em;">
+          <div class="col-lg-6 col-md-6">
+            <img src="{{url_for('static' , filename="figma/homepage/penjemputanbarang2.jpg")}}" class="rounded-circle" style="width: 25em; height: 25em; margin-left: 100px;
+            box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
+          </div>
+          <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <div class="col-12">
+              <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Jadwalkan Penjemputan</button>
+            </div>
+=======
   </div>
   <!-- Service End -->
 
@@ -334,10 +602,61 @@
           <div class="col-12">
             <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Jadwalkan
               Penjemputan</button>
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <!-- Penjemputan Barang End -->
+
+    <!-- Artikel Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <!-- Ini Judul Tiap Layanan -->
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -3%;">
+          <h1 style="color: #299e63; margin-top: 5%;">Artikel</h1>
+        </div>
+        <!-- Ini Isi Tiap Layanan -->
+        <div class="row g-4" style="height: 30em;">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <div class="col-12">
+              <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Baca Artikel</button>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <img src="{{url_for('static' , filename="figma/homepage/artikel2.jpg")}}" class="rounded-circle" style="width: 25em; height: 25em; margin-left: 30%;
+            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+            box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Artikel End -->
+
+    <!-- Rekomendasi Start -->
+    <div class="container-fluid py-5" style="margin-top: 5%;background-color: #EBEBEB;padding:3%;">
+      <div class="container">
+        <!-- Ini Judul Tiap Layanan -->
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -3%;">
+          <h1 style="color: #299e63; margin-top: 5%;">Rekomendasi</h1>
+        </div>
+
+        <!-- Ini Isi Tiap Layanan -->
+        <div class="row g-4" style="height: 30em;">
+          <div class="col-lg-6 col-md-6">
+            <img src="{{url_for('static' , filename="figma/homepage/rekomendasi2.jpg")}}" class="rounded-circle" style="width: 25em; height: 25em; margin-left: 100px;
+            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+            box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
+          </div>
+
+          <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <div class="col-12">
+              <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Lihat Rekomendasi</button>
+            </div>
+=======
   </div>
   <!-- Penjemputan Barang End -->
 
@@ -392,10 +711,105 @@
             standard dummy text ever since the 1500s.</p>
           <div class="col-12">
             <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Lihat Rekomendasi</button>
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <!-- Rekomendasi End -->
+
+    <!-- Penukaran Poin Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <!-- Ini Judul Tiap Layanan -->
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -3%;">
+          <h1 style="color: #299e63; margin-top: 5%;">Penukaran Poin</h1>
+        </div>
+        <!-- Ini Isi Tiap Layanan -->
+        <div class="row g-4" style="height: 30em;">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <div class="col-12">
+              <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Tukar Poin</button>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <img src="{{url_for('static' , filename="figma/homepage/penukaranpoin2.jpg")}}" class="rounded-circle" style="width: 25em; height: 25em; margin-left: 30%;
+            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+            box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Penukaran Poin End -->
+
+    <!-- Footer Start -->
+    <footer class=" FooterClass d-flex flex-row align-items-center justify-content-around">
+      <div>
+        <img src="{{url_for('static' , filename="img/era.png")}}" height="65" alt="" />
+      </div>
+      <div class="ml-n3 d-flex w-50 flex-column align-items-center">
+        <span class="t-1 w-50 d-flex flex-column justify-content-end">
+          <p class="font-weight-normal t-1">Ayo, ikut berpartisipasi dalam pengelolaan limbah elektronik untuk masa depan yang lebih baik!</p>
+          <p class="font-weight-normal t-1">© 2023 ERA</p>
+        </span>
+        <span> </span>
+      </div>
+      <div class="mr-5">
+        <span class="d-flex flex-row align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="WarnaIjo bi bi-envelope-fill" viewBox="0 0 16 16">
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+          </svg>
+          <p class="mb-0 ml-2">era@gmail.com</p>
+        </span>
+        <span class="d-flex flex-row align-items-center mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="WarnaIjo bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path
+              fill-rule="evenodd"
+              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+            />
+          </svg>
+          <p class="mb-0 ml-2">+62 1234567890</p>
+        </span>
+        <span class="d-flex flex-row align-items-center mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="WarnaIjo bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+          </svg>
+          <p class="mb-0 ml-2">Sentul</p>
+        </span>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    
+  </body>
+ <!-- Existing Scripts -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+ <script src="{{ url_for('static', filename = 'lib/wow/wow.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/easing/easing.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/waypoints/waypoints.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/counterup/counterup.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/owlcarousel/owl.carousel.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/moment.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+ <!-- Additional Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  <script>
+    var button = document.querySelector('.warna-dropdown')
+    button.addEventListener('click', () => {
+      button.style.backgroundColor = '#299e63'
+    })
+  </script>
+</html>
+=======
   </div>
   <!-- Rekomendasi End -->
 
@@ -510,3 +924,4 @@
 </script>
 
 </html>
+>>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
