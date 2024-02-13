@@ -24,11 +24,6 @@ auth.login_message = 'Please login to proceed!'
 auth.login_message_category = 'warning'
 
 from webdata.main.routes import main
-<<<<<<< HEAD
-app.register_blueprint(main, url_prefix='/')
-
-=======
 from webdata.user.routes import user
 app.register_blueprint(user, url_prefix='/user')
 app.register_blueprint(main, url_prefix='/')
->>>>>>> 5583e5c2ed37fa6a65c376e9592ebf0f9ecccac9
