@@ -1,0 +1,105 @@
+{% extends 'user/layout.html' %}
+
+{% block style %}
+  .textijo{ 
+    color: #299e63;
+  }
+  .w-14{
+    width:140px;
+  }
+  #alertTop {
+    position: fixed;
+    z-index: 99;
+    bottom: 2vh;
+    left: 5vh;
+    width: 90vw;
+    transition: all ease-in 0.3s;
+  }
+  .ButtonGantiPass{
+    cursor: pointer;
+  }
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div id="alertTop" class="auto-close-alert">
+          <div class="row">
+            <div class="col">
+              <div class="alert alert-{{category}}">
+                {{message}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <div class="w-100 d-flex align-items-center justify-content-center flex-column" style="margin-bottom: 100px;">
+    <div class="d-flex h-100 flex-column justify-content-center w-75" style="margin-top: 100px; margin-bottom:70px;">
+      <div class="d-flex align-items-center">
+        <a href="{{url_for('user.profile')}}" class="px-3 py-3 rounded-xl font-weight-bold WarnaHijau text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+              </svg>
+        </a>
+        <h1 class="mb-0 ml-3 font-weight-bold">Edit Akun</h1>
+      </div>
+      <div class="mt-3 WarnaHijau shadow p-4 RoundedCustom d-flex justify-content-evenly align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center mb-2 w-50">
+          <div>
+            <h2 class="text-white font-weight-bold my-3">Foto Profil</h2>
+          </div>
+          <div class="rounded-circle w-13 mt-3 mb-3 d-flex align-items-center justify-content-center">
+            <img class="border rounded-circle" src="{{ url_for('static', filename = 'img/ngkih.jpg') }}" width="200" height="200" alt="" />
+          </div>
+          <div>
+            <button class="border-0 font-weight-bold px-5 py-2 rounded-xl bg-white mt-3 textijo">Ganti Foto</button>
+          </div>
+        </div>
+        <form action="{{url_for('user.edit')}}" method="POST" class="w-50 d-flex mr-5 align-items-center justify-content-center">
+            <div class="ml-5 justify-content-center align-items-center d-flex gap-3 flex-column">
+              <h3 class="text-white font-weight-bold">Ubah Keterangan Akun</h3>
+            <div class="d-flex justify-content-center align-items-center">
+              <span class="w-14 text-white font-weight-bold">Username</span>
+              <input name="username" type="text" value="{{ current_user.username }}" class="rounded-xl border-0 px-5 py-2" />
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <span class="w-14 text-white font-weight-bold">Email</span>
+              <input name="email" type="email" value="{{ current_user.email }}" class="rounded-xl border-0 px-5 py-2" />
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <span class="w-14 text-white font-weight-bold">Nomor Telepon</span>
+              <input name="nomor_telepon" type="number" value="{{ current_user.nomor_telepon }}" class="rounded-xl border-0 px-5 py-2" />
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <span class="w-14 text-white font-weight-bold">Alamat</span>
+              <input name="alamat" type="text" value="{{ current_user.alamat }}" class="rounded-xl border-0 px-5 py-2" />
+            </div>
+
+            <div class="d-flex mt-2 justify-content-between w-100">
+              <div>
+                <div class="ButtonGantiPass border-0 text-center font-weight-bold w-15 py-2 rounded-xl bg-white textijo">Ganti Password</div>
+              </div>
+
+              <div>
+                <button type="submit" class="border-0 font-weight-bold px-5 py-2 rounded-xl bg-white textijo">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    var ButtonGantiPass = document.querySelector('.ButtonGantiPass');
+    ButtonGantiPass.addEventListener('click', function(){
+      window.location.href = "{{url_for('user.ganti_password')}}";
+    });
+  </script>
+{% endblock %}
+```
