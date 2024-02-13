@@ -5,6 +5,10 @@
   --dark: #1b2c51;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .fw-medium {
   font-weight: 500 !important;
 }

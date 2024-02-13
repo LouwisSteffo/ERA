@@ -16,12 +16,16 @@ def login():
 
 @main.route('/signuppost',  methods=['POST'])
 def signuppost():
-    print('this works')
     username = request.form['username']
     nama = request.form['nama']
     nomor_telepon = request.form['nomor_telpon']
     email = request.form['email']
     password = request.form['password']
+    
+    if len(username) > 20:
+        flash('Username tidak boleh lebih dari 20 karakter', 'danger')
+        return redirect(url_for('main.login'))
+    
 
     if not username or not nama or not nomor_telepon or not email or not password:
         flash('Data tidak boleh kosong', 'danger')
@@ -73,22 +77,3 @@ def loginpost():
     
     flash('Login gagal. Cek kembali email dan password', 'danger')
     return redirect(url_for('main.login'))
-
-
-# @main.route('/login' , methods=['GET', 'POST'])
-# def login():
-#     if current_user.is_authenticated:
-#         flash('Anda sudah login', 'info')
-#         return redirect(url_for('main/loginregister.html'))
-    
-#     form = LoginForm()
-    
-#     if request.method == 'POST':
-#         if form.validate_on_submit():
-#             user = Pengguna.query.filter_by(email=form.email.data).first()
-#             if user and bcrypt.check_password_hash(user.password, form.password.data):
-#                 login_user(user)
-#                 flash('Login berhasil', 'success')
-#                 # return redirect(url_for('.home'))
-#             else:
-#                 flash('Login gagal. Cek kembali email dan password', 'danger')
