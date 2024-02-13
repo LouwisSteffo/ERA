@@ -7,10 +7,17 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet" />
+    <!-- Existing Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Existing Font Awesome Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <!-- Existing MDB Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Additional Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Additional Font Awesome Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
@@ -24,17 +31,94 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
 
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename ='css/style.css') }}" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+
   </head>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    body{
+      font-family: "Montserrat";
+    }
     .warna-dropdown:hover {
       background-color: #299e63;
       color: #ffff;
     }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .NavItems {
+      gap: 20px;
+  }
+
+  .ButtonProfile {
+      padding-top: 17px;
+      padding-bottom: 17px;
+      padding-left: 40px;
+      padding-right: 40px;
+      background-color: #299e63;
+  }
+
+  .WarnaHijau {
+      background-color: #299e63;
+  }
+
+  .ContainerGap {
+      margin-top: 100px;
+  }
+  .FooterClass {
+    bottom: 0;
+    width: 100%;
+    height: 175px;
+    background-color: white;
+    color: black;
+  }
+
+  .t-1 {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .flexOpt {
+    width: 50%;
+  }
+  .WarnaIjo {
+    color: #299e63;
+  }
+  .TitleArticle{
+    margin-top: 11  0px;
+  }
+  .ContainerImage {
+      scale: 1.4;
+      margin-top: -30px;
+  }
+  footer p {
+    color: #878787;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    justify-content: center;
+    }
+  .w-20 {
+      width: 20%;
+  }
+
+  .rounded-xl {
+      border-radius: 20px;
+  }
+  .mt-7{
+      margin-top: 110px;
+  }
   </style>
 
   <body>
@@ -47,29 +131,51 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5"><h1 class="m-0 text-primary"><img src="{{ url_for('static', filename = 'img/era.png') }}" style="height: 60px" /></h1></a>
-
-      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
-
-      <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="index.html" class="nav-item nav-link active">Beranda</a>
-        <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
-          <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-            <a href="feature.html" class="dropdown-item warna-dropdown">Penjemputan Barang</a>
-            <a href="detil_pencarian.html" class="dropdown-item warna-dropdown">Pencarian titik</a>
-            <a href="appointment.html" class="dropdown-item warna-dropdown">Artikel</a>
-          </div>
-        </div>
-        <a href="contact.html" class="nav-item nav-link">Bantuan</a>
+    <nav class="top-0 z-3 w-100 position-fixed d-flex bg-white justify-content-between align-items-center">
+      <div class="ml-5 mt-1">
+          <img src="{{url_for('static' , filename="img/era.png")}}" height="49" alt="">
       </div>
-      <!-- a dibawah link ke dashboard -->
-      <a href="" class="btn btn-success rounded-0 py-4 px-lg-5 d-none d-lg-block">
-        PROFIL
-        <i class="bi bi-person-circle ms-2" style="font-size: larger;"></i>
-      </a>
-    </nav>
+      <div class="d-flex flex-row">
+          <div class="d-flex flex-row NavItems align-items-center">
+              <div>
+                  <a class="  text-decoration-none font-weight-normal text-dark" href="home.html">Beranda</a>
+              </div>
+              <div class="ml-2">
+                  <div class="">
+                      <button class="bg-white border-0 dropdown-toggle" type="button" id="dropdownMenuButton"
+                          data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false">
+                          Services
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Rekomendasi Pemanfaatan Limbah Elektronik</a></li>
+                          <li><a class="dropdown-item" href="#">Penjemputan Limbah Elektronik</a></li>
+                          <li><a class="dropdown-item" href="#">Artikel</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="ml-2">
+                  <a class="text-decoration-none font-weight-normal text-dark" href="">Bantuan</a>
+              </div>
+          </div>
+
+          {% if current_user.is_authenticated %}
+          <a href="{{url_for('user.profile')}}" class="ml-4 d-flex ButtonProfile flex-row justify-content-between align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle"
+                viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+            <p class="h5 text-white ml-2 mb-0">{{current_user.username}}</p>
+        </a>
+          {% else %}
+          <div class="ml-4 d-flex ButtonProfile flex-row justify-content-between align-items-center">
+            <a href="{{ url_for('auth.login') }}" class="btn btn-success">Login</a>
+          </div>
+          {% endif %}
+      </div>
+      </div>
+  </nav>
     <!-- Navbar End -->
 
     <!-- Header Start -->
@@ -262,51 +368,63 @@
     <!-- Penukaran Poin End -->
 
     <!-- Footer Start -->
-    <div class="container py-5">
-      <div class="row g-5">
-        <div class="col-lg-4 col-md-6">
-          <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5"><h1 class="m-0 text-primary"><img src="{{url_for('static' , filename="img/era.png")}}" style="height: 60px" /></h1></a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <p class="mb-2">Ayo, ikut berpartisipasi dalam pengelolaan limbah elektronik untuk masa depan yang lebih baik!</p>
-          <br />
-          <p>© 2023 ERA</p>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <p class="mb-2">
-            <i class="fa fa-envelope me-3" style="color: #299e63;"></i>era@gmail.com
-          </p>
-          <p class="mb-2">
-            <i class="fa fa-phone-alt me-3" style="color: #299e63;"></i>+62 1234567890
-          </p>
-          <p class="mb-2">
-            <i class="fa fa-map-marker-alt me-3" style="color: #299e63;"></i>Babakan Madang, Sentul, Indonesia
-          </p>
-        </div>
+    <footer class=" FooterClass d-flex flex-row align-items-center justify-content-around">
+      <div>
+        <img src="{{url_for('static' , filename="img/era.png")}}" height="65" alt="" />
       </div>
-    </div>
+      <div class="ml-n3 d-flex w-50 flex-column align-items-center">
+        <span class="t-1 w-50 d-flex flex-column justify-content-end">
+          <p class="font-weight-normal t-1">Ayo, ikut berpartisipasi dalam pengelolaan limbah elektronik untuk masa depan yang lebih baik!</p>
+          <p class="font-weight-normal t-1">© 2023 ERA</p>
+        </span>
+        <span> </span>
+      </div>
+      <div class="mr-5">
+        <span class="d-flex flex-row align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="WarnaIjo bi bi-envelope-fill" viewBox="0 0 16 16">
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+          </svg>
+          <p class="mb-0 ml-2">era@gmail.com</p>
+        </span>
+        <span class="d-flex flex-row align-items-center mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="WarnaIjo bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path
+              fill-rule="evenodd"
+              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+            />
+          </svg>
+          <p class="mb-0 ml-2">+62 1234567890</p>
+        </span>
+        <span class="d-flex flex-row align-items-center mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="WarnaIjo bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+          </svg>
+          <p class="mb-0 ml-2">Sentul</p>
+        </span>
+      </div>
+    </footer>
     <!-- Footer End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-success btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename = 'lib/wow/wow.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/easing/easing.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/counterup/counterup.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/moment.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+    
   </body>
+ <!-- Existing Scripts -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+ <script src="{{ url_for('static', filename = 'lib/wow/wow.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/easing/easing.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/waypoints/waypoints.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/counterup/counterup.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/owlcarousel/owl.carousel.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/moment.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+ <script src="{{ url_for('static', filename = 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+ <!-- Additional Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
   <script>
     var button = document.querySelector('.warna-dropdown')
     button.addEventListener('click', () => {
