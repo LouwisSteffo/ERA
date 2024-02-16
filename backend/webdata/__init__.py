@@ -25,5 +25,9 @@ auth.login_message_category = 'warning'
 
 from webdata.main.routes import main
 from webdata.user.routes import user
+from webdata.redeem.routes import redeem
+from webdata.dashboard.routes import dashboard
+app.register_blueprint(dashboard, url_prefix='/dashboard')
+app.register_blueprint(redeem, url_prefix='/redeem')
 app.register_blueprint(user, url_prefix='/user')
 app.register_blueprint(main, url_prefix='/')

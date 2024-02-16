@@ -1,0 +1,70 @@
+{% extends 'redeem/layout.html'  %}
+
+{% block title %}Penukaran Poin{% endblock title %}
+
+{% block style %}
+  <link href="{{ url_for('static', filename ='css/redeem/redeem.css') }}" rel="stylesheet" />
+{% endblock style %}
+
+{% block content %}
+    <div class="card bg-dark text-white mt-4">
+      <img class="card-img" src="{{ url_for('static', filename='img/redeem/redeem.png') }}" alt="Card image" />
+      <div class="card-img-overlay">
+        <h5 class="card-title">Penukaran <br />Poin</h5>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">Poin:</div>
+        <div class="col-md-auto"> <b>900</b> poin</div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="media-scroller snaps-inline">
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+
+      <div class="media-element">
+        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
+        <p class="title">50 Poin</p>
+      </div>
+      </div>
+    <!-- Akhir Projects -->
+{% endblock content %}
+
+  </body>
+</html>
