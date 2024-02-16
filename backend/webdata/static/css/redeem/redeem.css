@@ -1,0 +1,159 @@
+@import "https://unpkg.com/open-props";
+
+.container {
+  margin-top: 2%;
+  border-radius: 14px;
+  background: rgba(41, 158, 99, 0.85);
+  box-shadow: 2px 4px 7.1px -1px rgba(0, 0, 0, 0.25);
+  width: 382px;
+  height: 80px;
+  flex-shrink: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title {
+  color: #f2f2f2;
+  text-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-left: 5%;
+  margin-top: 18%;
+}
+
+.col-md-auto {
+  display: inline-block;
+  font-size : 2em;
+  width : auto;
+  margin-left: 16px;
+}
+
+.media-scroller {
+  --_spacer: var(--size-3);
+  margin-top: 2%;
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 18%;
+  padding: 0 var(--_spacer) var(--_spacer);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.media-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.media-scroller--with-groups {
+  grid-auto-columns: 10%;
+}
+
+.media-group {
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+}
+
+.media-element {
+  display: grid;
+  /* grid-template-rows: min-content; */
+  gap: var(--size-1);
+  background-color: #299e63;
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-2);
+}
+
+.media-element > img {
+  inline-size: 100%;
+  aspect-ratio: 15 / 11;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.voucher-image:hover {
+  filter: brightness(50%)
+}
+
+.media-element > p {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.media-element:hover {
+  background-color: #3ED287;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+/* general styling */
+
+/* .container2 {
+  inline-size: min(100% - 4rem, 70rem);
+  margin-inline: auto;
+} */
+
+/* .flow {
+  display: grid;
+  gap: var(--size-3);
+} */
+
+.page-header {
+  padding-block: var(--size-9);
+  margin-block-end: var(--size-9);
+  background: var(--gradient-16);
+  color: var(--gray-0);
+  box-shadow: var(--shadow-2);
+}
+
+.page-title {
+  font-size: var(--font-size-fluid-3);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-fluid-1);
+}
+
+.section-title {
+  padding-inline-start: var(--size-6);
+  margin-block: var(--size-9) var(--size-3);
+}
+/* Akhir Style Redeem */
+
+
+@media screen and (max-width: 900px){
+   .col-md-auto {
+    display: inline-block;
+    font-size : 1.5em;
+    width : auto;
+    margin-left: 16px;
+  }
+
+  .container {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    width : 35%;
+  }
+
+  .media-scroller {
+    margin-top: 5%;
+    grid-auto-columns: 30%;
+  }
+}
