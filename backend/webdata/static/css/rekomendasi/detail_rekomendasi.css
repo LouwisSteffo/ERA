@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+h2 {
+  font-weight: 800;
+  margin-top: 2rem;
+  color: #33363f;
+  text-align: center;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+p {
+  color: #878787;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  justify-content: center;
+}
+
+.gambar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.text {
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 62%;
+  margin: auto;
+  text-align: justify;
+}
+
+.text > p {
+  color: #000;
+  text-align: justify;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.container2 {
+  margin-top: 2%;
+  border-radius: 14px;
+  background: rgba(41, 158, 99, 0.85);
+  box-shadow: 2px 4px 7.1px -1px rgba(0, 0, 0, 0.25);
+  width: 382px;
+  height: 80px;
+  flex-shrink: 0;
+  font-family: Montserrat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-md-5 {
+  margin-bottom: 3%;
+  text-align: center;
+  justify-content: center;
+}
