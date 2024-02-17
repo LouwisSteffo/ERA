@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block title %}Pilih Layanan Penjemputan{% endblock title %}
+
+{% block style %}
+    <style>
+      .header_a {
+        background-image: url("{{ url_for('static', filename='img/penjemputan/pencariantitik1.png') }}");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        min-height: 600px;
+        padding-top: 10%;
+      }
+    </style>
+{% endblock style %}
+
+{% block content %}
+  <!-- ISI -->
+    <div class="container-fluid header_a">
+      <div class="row justify-content-center">
+        <div class="col-md-5" style="margin-top: 50px; text-align: center">
+          <table style="width: 100%">
+            <tr>
+              <td style="font-size: 30px; color: white">Tentukan Layanan Pengiriman</td>
+            </tr>
+            <tr>
+              <td style="height: 20px">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{{ url_for('static', filename='img/penjemputan/pencariantitiklogo.png') }}" class="rounded-circle" style="width: 100px; height: 100px" />
+              </td>
+            </tr>
+            <tr>
+              <td style="color: white; text-align: left; font-size: 11px">Pilih Layanan</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="input-group">
+                  <select class="custom-select">
+                    <option selected>Pilih Jenis Penjemputan</option>
+                    <option value="1">Diantar Sendiri</option>
+                    <option value="2">Penjemputan</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 mt-5" style="display: flex; justify-content: center">
+        <button class="border-0 btn SpecificButton btn-success w-25 p-3" style="border-radius: 100px" type="submit">KIRIM</button>
+      </div>
+    </div>
+    <!-- AKHIR ISI   -->
+
+{% endblock content %}
