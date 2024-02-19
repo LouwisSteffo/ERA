@@ -11,5 +11,10 @@ class Config():
         
         
         self.SESSION_LIFETIME = 10800
+        
+        self.FOLDER_NAME = "profile_picture"
+        self.UPLOAD_FOLDER = f"webdata/static/{self.FOLDER_NAME}"
+        
+        self.ALLOWED_FILE = ["jpg", "png", "jpeg"]
         # self.DB_URI = 'mysql://root:root@localhost:3306/test1'
         #nama_sql://username:password@IP:port/nama_database

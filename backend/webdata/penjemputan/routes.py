@@ -11,7 +11,26 @@ penjemputan = Blueprint('penjemputan', __name__)
 def index():
     return render_template('penjemputan/penjemputan.html')
 
-@penjemputan.route('/pilih_layanan')
+@penjemputan.route('/pilih_layanan', methods=['GET', 'POST'])
 @login_required
 def pilih_layanan():
-    return render_template('penjemputan/pilih_layanan.html')
+
+    if request.method == 'POST':
+        layanan_pilihan = request.form.get('pilihan_layanan')
+        
+        if layanan_pilihan == '1':
+            return redirect(url_for('penjemputan.antar_sendiri'))
+        elif layanan_pilihan == '2':
+            return redirect(url_for('penjemputan.ekspedisi'))
+
+    return render_template('penjemputan/pilih_layanan.html')   
+
+@penjemputan.route('/ekspedisi')
+@login_required
+def ekspedisi():
+    return render_template('penjemputan/halaman_ekspedisi.html')
+
+@penjemputan.route('/antar_sendiri')
+@login_required
+def antar_sendiri():
+    return render_template('penjemputan/detil_pencarian.html')

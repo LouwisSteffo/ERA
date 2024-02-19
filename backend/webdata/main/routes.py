@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, url_for, request, flash, redirect
+from flask import Blueprint, render_template, url_for, request, flash, redirect, send_from_directory
 from flask_login import login_required, login_user, logout_user, current_user
+
 from sqlalchemy import text
 from webdata.models import Pengguna
-from webdata import db , bcrypt
+from webdata import db , bcrypt, app
 
 main = Blueprint('main', __name__)
 
@@ -77,3 +78,11 @@ def loginpost():
     
     flash('Login gagal. Cek kembali email dan password', 'danger')
     return redirect(url_for('main.login'))
+
+# @main.route('/view_image/<string:name>')
+# def view_image(name):
+#     return send_from_directory(app.config['UPLOAD_FOLDER'], name)
+
+@main.route('/view_image/<string:name>')
+def view_image(name):
+    return redirect(url_for('static', filename=f"{app.config['FOLDER_NAME']}/{name}"), code=301)
