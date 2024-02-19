@@ -52,10 +52,14 @@
             <h2 class="text-white font-weight-bold my-3">Foto Profil</h2>
           </div>
           <div class="rounded-circle w-13 mt-3 mb-3 d-flex align-items-center justify-content-center">
-            <img class="border rounded-circle" src="{{ url_for('static', filename = 'img/ngkih.jpg') }}" width="200" height="200" alt="" />
+            
+            <img class="border rounded-circle" src="{{url_for('main.view_image', name=current_user.foto_profil)}}" width="200" height="200" alt=""/>
           </div>
           <div>
-            <button class="border-0 font-weight-bold px-5 py-2 rounded-xl bg-white mt-3 textijo">Ganti Foto</button>
+            <form action="{{url_for('user.change_profile_picture')}}" method="POST" enctype="multipart/form-data" id="changeProfileForm">
+              <input type="file" name="profile" style="display: none;" id="profileInput">
+            </form>
+            <button class="border-0 font-weight-bold px-5 py-2 rounded-xl bg-white mt-3 textijo" id="gantiFoto">Ganti Foto</button>
           </div>
         </div>
         <form action="{{url_for('user.edit')}}" method="POST" class="w-50 d-flex mr-5 align-items-center justify-content-center">
@@ -101,5 +105,20 @@
       window.location.href = "{{url_for('user.ganti_password')}}";
     });
   </script>
+
+  <script>
+    $(document).ready(function(){
+      $("#gantiFoto").on("click", function(){
+        $('#profileInput').click();
+      })
+
+      $('#profileInput').on('change', function(){
+        if(this.files && this.files[0]) {
+          // If a file is selected, submit the form with the name 'ok'
+          $('#changeProfileForm').submit();
+        }
+      })
+    });
+  </script>
 {% endblock %}
-```
+
