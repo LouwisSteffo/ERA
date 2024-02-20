@@ -33,4 +33,4 @@ def ekspedisi():
 @penjemputan.route('/antar_sendiri')
 @login_required
 def antar_sendiri():
-    return render_template('penjemputan/detil_pencarian.html')
+    return render_template('penjemputan/lokasi_pengepul.html')

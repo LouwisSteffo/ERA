@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 
-{% block title %}Pilih Ekspedisi{% endblock title %}
+{% block title %}Penjemputan{% endblock title %}
 
 {% block content %}
     <div class="container-fluid py-5" style="background-color:#F2F2F2;">
         <div class="container">
             <div class="row g-5" style="margin-bottom: 40px;">
                 <h2>
-                    <a class="bi bi-arrow-left-circle-fill" style="color: #299e63; font-size: 40px; margin-right: 20px;" href="index.html">
+                    <a class="bi bi-arrow-left-circle-fill" style="color: #299e63; font-size: 40px; margin-right: 20px;" href="{{ url_for('penjemputan.pilih_layanan') }}">
                         Pilih Kurir Penjemputan
                     </a>
                 </h2>
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="img/Ekspedisi/JNE.png" class="img-fluid rounded-start" style="height: 170px; margin-top: 15px; margin-left: 40px;">
+                                <img src="{{ url_for('static', filename='img/ekspedisi/JNE.png') }}" class="img-fluid rounded-start" style="height: 170px; margin-top: 15px; margin-left: 40px;">
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="img/Ekspedisi/JT-Express-Logo.png" class="img-fluid rounded-start" style="height:170px; margin-top: 15px; margin-left: 40px;">
+                                <img src="{{ url_for('static', filename='img/ekspedisi/JT-Express-Logo.png') }}" class="img-fluid rounded-start" style="height:170px; margin-top: 15px; margin-left: 40px;">
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="img/Ekspedisi/grabexpress.png" class="img-fluid rounded-start" style="height: 170px; width: 170px; margin-top: 15px; margin-left: 120px;">
+                                <img src="{{ url_for('static', filename='img/ekspedisi/grabexpress.png') }}" class="img-fluid rounded-start" style="height: 170px; width: 170px; margin-top: 15px; margin-left: 120px;">
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="img/Ekspedisi/Gosend.png" class="img-fluid rounded-start" style="height:220px; width: 70%; margin-left: 50px;">
+                                <img src="{{ url_for('static', filename='img/ekspedisi/Gosend.png') }}" class="img-fluid rounded-start" style="height:220px; width: 70%; margin-left: 50px;">
                             </div>
                         </div>
                     </div>
