@@ -150,7 +150,7 @@
       <div class="d-flex flex-row">
           <div class="d-flex flex-row NavItems align-items-center">
               <div>
-                  <a class="  text-decoration-none font-weight-normal text-dark" href="home.html">Beranda</a>
+                  <a class="  text-decoration-none font-weight-normal text-dark" href="{{ url_for('main.home') }}">Beranda</a>
               </div>
               <div class="ml-2">
                   <div class="">
@@ -159,7 +159,7 @@
                           Services
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="#">Rekomendasi Pemanfaatan Limbah Elektronik</a></li>
+                          <li><a class="dropdown-item" href="{{ url_for('rekomendasi.index') }}">Rekomendasi Pemanfaatan Limbah Elektronik</a></li>
                           <li><a class="dropdown-item" href="{{ url_for('penjemputan.index') }}">Penjemputan Limbah Elektronik</a></li>
                           <li><a class="dropdown-item" href="#">Artikel</a></li>
                       </ul>
@@ -250,7 +250,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
   
     <!-- Template Javascript -->
-    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename ='js/main.js') }}"></script>
     <script>
       var button = document.querySelector('.warna-dropdown')
       button.addEventListener('click', () => {

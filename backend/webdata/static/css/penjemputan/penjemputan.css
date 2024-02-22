@@ -66,6 +66,7 @@
   font-size: xx-large;
   font-weight: 500;
 }
+
 .terakhir {
   margin-top: 3%;
 }
@@ -91,7 +92,7 @@ hr {
 .layanan {
   color: black;
   font-family: "Montserrat";
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
   font-size: 1rem;
 }
