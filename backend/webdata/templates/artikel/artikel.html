@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 
-{% block title %}Rekomendasi{% endblock title %}
+{% block title %}Artikel{% endblock title %}
 
 {% block style %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/rekomendasi/rekomendasi.css') }}" />
   <style>
     .card-img {
-      background-image: url("{{ url_for('static', filename='img/rekomendasi/jumbotron-rekomendasi.png') }}");
+      background-image: url("{{ url_for('static', filename='img/artikel/background13.png') }}");
     }
   </style>
 {% endblock style %}
@@ -16,7 +16,7 @@
         <div class="card bg-dark text-white">
             <img class="card-img" />
             <div class="card-img-overlay">
-              <h5 class="card-title">Rekomendasi <br>Pemanfaatan Limbah <br> Elektronik</h5>
+              <h5 class="card-title">Artikel Terkait Limbah <br> Elektronik</h5>
             </div>
         </div>
     
@@ -33,7 +33,7 @@
                     <!-- <div class="card-img"> -->
                       <img src="{{ url_for('static', filename='/img/rekomendasi/tv.png') }}" alt="" />
                     <!-- </div> -->
-                    <a href="{{ url_for('rekomendasi.detail') }}" class="title">Televisi</a>
+                    <a href="{{ url_for('artikel.detail') }}" class="title">Televisi</a>
                   </div>
     
                   <div class="media-element">
