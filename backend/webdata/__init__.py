@@ -32,6 +32,8 @@ from webdata.user.routes import user
 from webdata.redeem.routes import redeem
 from webdata.dashboard.routes import dashboard
 from webdata.penjemputan.routes import penjemputan
+from webdata.rekomendasi.routes import rekomendasi
+app.register_blueprint(rekomendasi, url_prefix='/rekomendasi')
 app.register_blueprint(penjemputan, url_prefix='/penjemputan')
 app.register_blueprint(dashboard, url_prefix='/dashboard')
 app.register_blueprint(redeem, url_prefix='/redeem')
