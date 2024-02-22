@@ -5,14 +5,14 @@ from sqlalchemy import text
 from webdata.models import Pengguna
 from webdata import db , bcrypt, app
 
-rekomendasi = Blueprint('rekomendasi', __name__)
+artikel = Blueprint('artikel', __name__)
 
-@rekomendasi.route('/')
+@artikel.route('/')
 @login_required
 def index():
-    return render_template('rekomendasi/rekomendasi.html')
+    return render_template('artikel/artikel.html')
 
-@rekomendasi.route('/detail')
+@artikel.route('/detail')
 @login_required
 def detail():
-    return render_template('rekomendasi/detail_rekomendasi.html')
+    return render_template('artikel/detail_artikel.html')

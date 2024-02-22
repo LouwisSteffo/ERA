@@ -1,108 +1,125 @@
-body {
-    background-color: #f2f2f2;
-    color: white;
-    /* font-family: Montserrat; */
-}
+@import "https://unpkg.com/open-props";
 
-.card {
-    height: 100%;
-}
+    body {
+      background-color: #f2f2f2;
+      color: white;
+      /* font-family: Montserrat; */
+    }
+    
+    .card {
+      height: 100%;
+      border-radius: 0;
+      border: none;
+    }
 
-.card-img {
-    /* background-image: url("/assets/rekomendasi/jumbotron-rekomendasi.png"); */
-    background-size:cover;
-    background-position: center;
-    filter: brightness(70%);
-    height: 80vh;
-}
-
-.card-img-overlay {
-    text-align: bottom left;
-}
-
-.media-scroller {
-    --_spacer: var(--size-7);
-    width: 85vw;
-    margin: auto;
-    /* margin-top: 4%; */
-    /* display: grid; */
-    display: flex;
-    justify-content: space-evenly;
-    /* align-items: center; */
-    gap: var(--_spacer);
-    grid-auto-flow: column;
-    grid-auto-columns: 50%;
-    padding: 0 var(--_spacer) 0 var(--_spacer);
-    /* overflow-x: auto; */
-    overscroll-behavior-inline: contain;
-    /* background-color: #3ED287; */
-}
-
-.media-scroller::-webkit-scrollbar {
-    display: none;
-}
-
-.media-scroller--with-groups {
-    grid-auto-columns: 10%;
-}
-
-.media-group {
-    display: grid;
-    gap: var(--_spacer);
-    grid-auto-flow: column;
-}
-
-.media-element {
-    display: grid;
-    /* grid-template-rows: min-content; */
-    gap: var(--size-1);
-    background-color: #299e63;
-    border-radius: var(--radius-4);
-    box-shadow: var(--shadow-2);
-    overflow: hidden;
-}
-
-.media-element > img {
-    inline-size: 100%;
-    aspect-ratio: 14 / 11;
-    object-fit: cover;
-    /* border-radius: 16px; */
-    border-top-left-radius: var(--radius-4);
-    border-top-right-radius: var(--radius-4);
-    background-size: cover;
-    background-position: center;
-}
-
-.media-element:hover img {
-    transform: scale(1.1);
-    transition: .2s;
-}
-
-.media-element > p {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.media-element:hover {
-    background-color: #3ED287;
-}
-
-.snaps-inline {
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: var(--_spacer, 1rem);
-}
-
-.snaps-inline > * {
-    scroll-snap-align: start;
-}
-
-.title {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 600;
-    padding: 7%;
-}
+    .card-img {
+        /* background-image: url("/assets/rekomendasi/jumbotron-rekomendasi.png"); */
+        background-image: url("{{ url_for('static', filename='img/rekomendasi/jumbotron-rekomendasi.png') }}");
+        background-size:cover;
+        background-position: center;
+        filter: brightness(70%);
+        height: 80vh;
+    }
+    
+    .card-img-overlay {
+        text-align: bottom left;
+    }
+    
+    .card-title {
+      color: #f2f2f2;
+      text-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
+      font-family: "Montserrat";
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      margin-left: 5%;
+      margin-top: 18%;
+    }
+    
+    .media-scroller {
+        --_spacer: var(--size-7);
+        width: 85vw;
+        margin: auto;
+        /* margin-top: 4%; */
+        /* display: grid; */
+        display: flex;
+        justify-content: space-evenly;
+        /* align-items: center; */
+        gap: var(--_spacer);
+        grid-auto-flow: column;
+        grid-auto-columns: 50%;
+        padding: 0 var(--_spacer) 0 var(--_spacer);
+        /* overflow-x: auto; */
+        overscroll-behavior-inline: contain;
+        /* background-color: #3ED287; */
+    }
+    
+    .media-scroller::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .media-scroller--with-groups {
+        grid-auto-columns: 10%;
+    }
+    
+    .media-group {
+        display: grid;
+        gap: var(--_spacer);
+        grid-auto-flow: column;
+    }
+    
+    .media-element {
+        display: grid;
+        /* grid-template-rows: min-content; */
+        gap: var(--size-1);
+        background-color: #299e63;
+        border-radius: var(--radius-4);
+        box-shadow: var(--shadow-2);
+        overflow: hidden;
+    }
+    
+    .media-element > img {
+        inline-size: 100%;
+        aspect-ratio: 14 / 11;
+        object-fit: cover;
+        /* border-radius: 16px; */
+        border-top-left-radius: var(--radius-4);
+        border-top-right-radius: var(--radius-4);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .media-element:hover img {
+        transform: scale(1.1);
+        transition: .2s;
+    }
+    
+    .media-element > p {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .media-element:hover {
+        background-color: #3ED287;
+    }
+    
+    .snaps-inline {
+        scroll-snap-type: inline mandatory;
+        scroll-padding-inline: var(--_spacer, 1rem);
+    }
+    
+    .snaps-inline > * {
+        scroll-snap-align: start;
+    }
+    
+    .title {
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 7%;
+    }

@@ -37,7 +37,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename ='css/style.css') }}" rel="stylesheet" />
-
+    <!-- <link href="{{ url_for('static', filename ='css/index.css') }}" rel="stylesheet" /> -->
+    
     {% block style %}{% endblock style %}
 
   </head>
@@ -53,6 +54,7 @@
 
     body{
       font-family: "Montserrat";
+      /*background-color: #f2f2f2;*/
     }
 
     .warna-dropdown:hover {
@@ -156,12 +158,12 @@
                   <div class="">
                       <button class="bg-white border-0 dropdown-toggle" type="button" id="dropdownMenuButton"
                           data-mdb-dropdown-init data-mdb-ripple-init aria-expanded="false">
-                          Services
+                          Layanan
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <li><a class="dropdown-item" href="{{ url_for('rekomendasi.index') }}">Rekomendasi Pemanfaatan Limbah Elektronik</a></li>
                           <li><a class="dropdown-item" href="{{ url_for('penjemputan.index') }}">Penjemputan Limbah Elektronik</a></li>
-                          <li><a class="dropdown-item" href="#">Artikel</a></li>
+                          <li><a class="dropdown-item" href="{{ url_for('artikel.index') }}">Artikel</a></li>
                       </ul>
                   </div>
               </div>

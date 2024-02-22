@@ -33,6 +33,8 @@ from webdata.redeem.routes import redeem
 from webdata.dashboard.routes import dashboard
 from webdata.penjemputan.routes import penjemputan
 from webdata.rekomendasi.routes import rekomendasi
+from webdata.artikel.routes import artikel
+app.register_blueprint(artikel, url_prefix='/artikel')
 app.register_blueprint(rekomendasi, url_prefix='/rekomendasi')
 app.register_blueprint(penjemputan, url_prefix='/penjemputan')
 app.register_blueprint(dashboard, url_prefix='/dashboard')
