@@ -8,6 +8,25 @@
     .card-img {
       background-image: url("{{ url_for('static', filename='img/artikel/background13.png') }}");
     }
+
+    .article-description {
+      width : 90%;
+      height: 100%;
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      margin-top: 5px;
+    }
+
+    .title {
+      display: block;
+    }
+
+    .article-brief {
+      display: block;
+      font-size: .7em;
+    }
   </style>
 {% endblock style %}
 
@@ -33,12 +52,16 @@
                     <!-- <div class="card-img"> -->
                       <img src="{{ url_for('static', filename='/img/rekomendasi/tv.png') }}" alt="" />
                     <!-- </div> -->
-                    <a href="{{ url_for('artikel.detail') }}" class="title">Televisi</a>
+                    <div class="article-description">
+                      <a href="{{ url_for('artikel.detail') }}" class="title">Televisi</a><br>
+                      <p class="article-brief">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ...</p>
+                    </div>
                   </div>
     
                   <div class="media-element">
                     <img src="{{ url_for('static', filename='/img/rekomendasi/kamera.png') }}" alt="" />
                     <a href="" class="title">Kamera</a>
+                    
                   </div>
     
                   <div class="media-element">
@@ -107,7 +130,7 @@
             </div>      
               
               
-            <div class="col-2">
+            <div class="col-2 mb-5">
 
             </div>
           </div>
