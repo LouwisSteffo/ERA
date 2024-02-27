@@ -59,8 +59,8 @@ class Transaksi_Penjemputan(db.Model , UserMixin):
     __tablename__ = 'transaksi_penjemputan'
     id = db.Column(db.Integer, primary_key=True)
     id_pengguna = db.Column(db.Integer, db.ForeignKey('pengguna.id'), nullable=False)
-    id_ekspedisi = db.Column(db.Integer, db.ForeignKey('ekspedisi.id'), nullable=False)
-    id_lokasi = db.Column(db.Integer, db.ForeignKey('lokasi.id'), nullable=False)
+    id_ekspedisi = db.Column(db.Integer, db.ForeignKey('ekspedisi.id'), nullable=True)
+    id_lokasi = db.Column(db.Integer, db.ForeignKey('lokasi.id'), nullable=True)
     berat_limbah = db.Column(db.Integer, nullable=False)
     tanggal_transaksi = db.Column(db.DateTime , nullable=False , default=datetime.utcnow)
     status_transaksi = db.Column(db.String(100), nullable=False)

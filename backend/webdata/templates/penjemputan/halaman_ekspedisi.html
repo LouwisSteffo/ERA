@@ -11,8 +11,7 @@
                     <p style="display: inline-block; color: #299e63; font-size: 40px; margin-right: 20px;">Pilih Kurir Penjemputan</p>
                 </h2>
             </div>
-            
-            <!-- {{% for  %}} -->
+        
             <!-- Ekspedisi JNE -->
             <div class="row g-4">
                 <div class="col-md-12">
@@ -29,8 +28,8 @@
                                     </p>
                                     <a href="https://www.jne.co.id/">
                                         <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
-                                            <a href="#" class="link-light text-decoration-none">Pilih</a>
-                                        </button>
+                                            <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = ekspedisi[0].id, id_lokasi = 0) }}" class="link-light text-decoration-none">Pilih</a>
+                                        </button>                                        
                                     </a>
                                 </div>
                             </div>
@@ -41,7 +40,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Ekspedisi J%T Express -->
             <div class="row g-4" style="margin-top: 10px;">
                 <div class="col-md-12">
@@ -57,7 +56,9 @@
                                         08:00 - 20:00 ( 08:00 AM - 08:00 PM )
                                     </p>
                                     <a href="https://www.jet.co.id/">
-                                        <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                        <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                            <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = ekspedisi[1].id, id_lokasi = 0) }}" class="link-light text-decoration-none">Pilih</a>
+                                        </button>
                                     </a>
                                 </div>
                             </div>
@@ -83,7 +84,9 @@
                                         24 Jam
                                     </p>
                                     <a href="https://express.grab.com/book/login">
-                                        <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                        <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                            <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = ekspedisi[2].id, id_lokasi = 0) }}" class="link-light text-decoration-none">Pilih</a>
+                                        </button>
                                     </a>
                                 </div>
                             </div>
@@ -109,7 +112,9 @@
                                         06:00 - 21:00 ( 06:00 AM - 09:00 PM )
                                     </p>
                                     <a href="https://www.gojek.com/en-id/gosend">
-                                        <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                        <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                            <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = ekspedisi[3].id, id_lokasi = 0) }}" class="link-light text-decoration-none">Pilih</a>
+                                        </button>
                                     </a>
                                 </div>
                             </div>
