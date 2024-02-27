@@ -13,8 +13,6 @@
     }
 
     .card-img {
-        /* background-image: url("/assets/rekomendasi/jumbotron-rekomendasi.png"); */
-        background-image: url("{{ url_for('static', filename='img/rekomendasi/jumbotron-rekomendasi.png') }}");
         background-size:cover;
         background-position: center;
         filter: brightness(70%);
