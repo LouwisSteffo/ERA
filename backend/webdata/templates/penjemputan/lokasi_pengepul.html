@@ -25,7 +25,9 @@
                                         <i class="bi bi-clock ms-1" style="margin-right: 15px; font-size: larger;"></i>
                                         Buka 24 Jam
                                     </p>
-                                    <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                    <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                        <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = 0, id_lokasi = lokasi[0].id) }}" class="link-light text-decoration-none">Pilih</a>
+                                    </button>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -49,7 +51,9 @@
                                         <i class="bi bi-clock ms-1" style="margin-right: 15px; font-size: larger;"></i>
                                         08:00 - 22:00 ( 08:00 AM - 10:00 PM )
                                     </p>
-                                    <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                    <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                        <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = 0, id_lokasi = lokasi[1].id) }}" class="link-light text-decoration-none">Pilih</a>
+                                    </button>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -73,7 +77,9 @@
                                       <i class="bi bi-clock ms-1" style="margin-right: 15px; font-size: larger;"></i>
                                       07:30 - 17:00 ( 07:30 AM - 5:00 PM )
                                   </p>
-                                  <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                  <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                    <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = 0, id_lokasi = lokasi[2].id) }}" class="link-light text-decoration-none">Pilih</a>
+                                  </button>
                               </div>
                           </div>
                           <div class="col-md-4">
@@ -97,7 +103,9 @@
                                     <i class="bi bi-clock ms-1" style="margin-right: 15px; font-size: larger;"></i>
                                     07:00 - 22:00 ( 07:00 AM - 10:00 PM )
                                 </p>
-                                <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">Pilih</button>
+                                <button class="border-0 btn SpecificButton btn-success py-3 rounded-9" style="width: 150px; " type="submit">
+                                    <a href="{{ url_for('penjemputan.tambah_transaksi', id_ekspedisi = 0, id_lokasi = lokasi[3].id) }}" class="link-light text-decoration-none">Pilih</a>
+                                </button>
                             </div>
                         </div>
                         <div class="col-md-4">
