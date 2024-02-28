@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: f9a5ecb5225e
+Revision ID: 653cdd2436ce
 Revises: 
-Create Date: 2024-02-07 15:11:50.047542
+Create Date: 2024-02-28 13:25:15.039341
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f9a5ecb5225e'
+revision = '653cdd2436ce'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -48,12 +48,12 @@ def upgrade():
     )
     op.create_table('pengguna',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('nama_pelanngan', sa.String(length=100), nullable=False),
+    sa.Column('nama_pengguna', sa.String(length=100), nullable=False),
     sa.Column('username', sa.String(length=20), nullable=False),
     sa.Column('email', sa.String(length=120), nullable=False),
     sa.Column('nomor_telepon', sa.String(length=20), nullable=False),
-    sa.Column('foto_profil', sa.String(length=100), nullable=False),
-    sa.Column('alamat', sa.String(length=100), nullable=False),
+    sa.Column('foto_profil', sa.String(length=100), nullable=True),
+    sa.Column('alamat', sa.String(length=100), nullable=True),
     sa.Column('poin', sa.Integer(), nullable=False),
     sa.Column('password', sa.String(length=300), nullable=False),
     sa.PrimaryKeyConstraint('id'),
@@ -64,9 +64,10 @@ def upgrade():
     op.create_table('transaksi_penjemputan',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('id_pengguna', sa.Integer(), nullable=False),
-    sa.Column('id_ekspedisi', sa.Integer(), nullable=False),
-    sa.Column('id_lokasi', sa.Integer(), nullable=False),
+    sa.Column('id_ekspedisi', sa.Integer(), nullable=True),
+    sa.Column('id_lokasi', sa.Integer(), nullable=True),
     sa.Column('berat_limbah', sa.Integer(), nullable=False),
+    sa.Column('tanggal_transaksi', sa.DateTime(), nullable=False),
     sa.Column('status_transaksi', sa.String(length=100), nullable=False),
     sa.ForeignKeyConstraint(['id_ekspedisi'], ['ekspedisi.id'], ),
     sa.ForeignKeyConstraint(['id_lokasi'], ['lokasi.id'], ),
