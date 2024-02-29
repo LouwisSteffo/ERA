@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block title %}Rekomendasi{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rekomendasi/rekomendasi.css') }}" />
+<style>
+    *{
+        font-family: "Montserrat";
+    }
+  .card-img {
+    background-image: url("{{ url_for('static', filename='img/FAQ/faq-jumbotron.png') }}");
+  }
+  .shadow-custom {
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  .card-title-FAQ {
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  .ButtonHover{
+    background-color: white;
+    text-align: left;
+    font-weight: 500;
+  }
+  .ButtonHover:hover{
+    background-color: #299E63;
+    color: white;
+  }
+  .py-custom{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+</style>
+{% endblock style %}
+
+{% block content %}
+    <div class=" card bg-dark text-white">
+        <img class="card-img" />
+        <div class="card-img-overlay mt-7" style="text-align: center;" >
+            <h5 class="card-title">Hai, Erazen <br>ada yang bisa kami bantu?</h5>
+        </div>
+    </div>
+    <div class="container mt-5" style="justify-content: center; display: flex;">
+        <form class="form-inline">
+          <input class="form-control mr-sm-3 rounded-5 shadow-custom" type="search" placeholder="Ketik bantuanmu disini ..." aria-label="Search" style="width: 425px;">
+          <button class="btn btn-success my-2 my-sm-0 rounded-5 shadow-custom" type="submit" style="width: 90px;">CARI</button>
+        </form>
+    </div>
+    <div class="d-flex w-100 justify-content-center mt-5 flex-column align-items-center mb-5">
+        <h1 class="card-title-FAQ mb-4">FAQ</h1>
+        <div class="w-75">
+            <button type="button" class="mb-3 px-5 py-custom btn-outline-dark ButtonHover justify-content-start rounded-5 btn-block">Bagaimana cara menjadi Erazen?</button>
+            <button type="button" class="mb-3 px-5 py-custom btn-outline-dark ButtonHover justify-content-start rounded-5 btn-block">Lorem  asdaushdajsdnajsdnajsdnjasnd? </button>
+            <button type="button" class="mb-6 px-5 py-custom btn-outline-dark ButtonHover justify-content-start rounded-5 btn-block">Mengapa Bumi Bulat?</button>
+        </div>
+        <button class="btn btn-success my-2 my-sm-0 rounded-5 shadow-custom py-3" type="submit" style="width: auto;">CHAT CUSTOMER SERVICE SEKARANG</button>
+    </div>
+
+
+{% endblock content %}
+

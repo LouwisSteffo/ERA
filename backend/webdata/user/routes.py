@@ -173,10 +173,12 @@ def change_profile_picture():
 
     file = request.files['profile']
     
-    filename = process_and_save_image(file, app.config['UPLOAD_FOLDER'])
+    filename = process_and_save_image(file, app.config['UPLOAD_FOLDER'])   
+
     if filename is None:
         flash("File format not accepted.", "danger")
         return redirect(url_for("user.edit_profile"))
+    
     
     delete_image(current_user.foto_profil, app.config['UPLOAD_FOLDER'])
     user = Pengguna.query.get(current_user.id)
@@ -185,3 +187,6 @@ def change_profile_picture():
     flash("Profile picture changed successfully.", "success")
     return redirect(url_for('user.edit_profile'))
 
+@user.route('/FAQ')
+def FAQ():
+    return render_template('user/FAQ.html')
