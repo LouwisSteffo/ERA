@@ -21,19 +21,19 @@
                 </a>
                 <h2 class="text-white">0</h2>
             </div>
-            <div class="shadow DalamProses d-flex flex-column align-items-center justify-content-center w-20 rounded-xl">
+            <div class="shadow DalamProses d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
                 <a class="link-dark" href="{{ url_for('dashboard.dalam_proses') }}">
                     Dalam Proses
                 </a>
                 <h2>0</h2>
             </div>
-            <div class="shadow Selesai d-flex flex-column align-items-center justify-content-center w-20 rounded-xl">
+            <div class="shadow Selesai d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
                 <a class="link-dark" href="{{ url_for('dashboard.selesai') }}">
                     Selesai
                 </a>
                 <h2>0</h2>
             </div>
-            <div class="shadow Pembatalan d-flex flex-column align-items-center justify-content-center w-20 rounded-xl">
+            <div class="shadow Pembatalan d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
                 <a class="link-dark" href="{{ url_for('dashboard.batal') }}">
                     Batal
                 </a>
@@ -42,32 +42,34 @@
         </div>
     </div>
 
-    <div class="w-100 d-flex flex-column align-items-center justify-content-center">
-        <div class="p-3 mt-4 w-75 d-flex justify-content-between align-items-center shadow rounded-xl">
-            <div class="d-flex align-items-center">
-                <img class="mr-5" src="{{ url_for('static', filename='img/dashboard/Image.png') }}" alt="">
-                <div>
-                    <h2>Televisi</h2>
-                    <h5>Tanggal</h5 >
-                    <h5>Ekspedisi</h5>
-                    <h5>Diantar / Jemput</h5>
-                </div>
+    <div class="w-100 d-flex flex-column align-items-center justify-content-center mb-5">
+        {% if total == 0 %}
+            <div class="">
+                <p class="text-dark mr-3 h-100 mt-7 mb-7">Belum Ada Transaksi Dalam Antrean</p>
             </div>
-            <p class="text-success mr-3 h-100 mt-7">Dalam Antrean</p>
-        </div>
-
-        <div class="p-3 mt-4 w-75 d-flex justify-content-between align-items-center shadow rounded-xl">
-            <div class="d-flex align-items-center">
-                <img class="mr-5" src="{{ url_for('static', filename='img/dashboard/Image.png') }}" alt="">
-                <div>
-                    <h2>Televisi</h2>
-                    <h5>Tanggal</h5 >
-                    <h5>Ekspedisi</h5>
-                    <h5>Diantar / Jemput</h5>
+        {% else %}
+            {% for transaksi in list_transaksi %}
+            <div class="p-3 mt-4 w-75 d-flex justify-content-between align-items-center shadow rounded-xl bg-white">
+                <div class="d-flex align-items-center">
+                    <img class="mr-5" src="{{ url_for('static', filename='img/dashboard/Image.png') }}" alt="">
+                    <div>
+                        <h2>Televisi</h2>
+                        <h5>{{ transaksi.tanggal_transaksi }}</h5>
+                        <!-- nama Ekspedisi-->
+                        <h5>{{ transaksi.ekspedisi_detail.nama_ekspedisi }}</h5>
+                        
+                        {% if transaksi.id_lokasi %}
+                            <h5>Antar Sendiri</h5>
+                        {% else %}
+                            <h5>Penjemputan</h5>
+                        {% endif %}
+                    </div>
                 </div>
+                <p class="text-warning mr-3 h-100 mt-7">Dalam Antrean</p>
             </div>
-            <p class="text-success mr-3 h-100 mt-7">Dalam Antrean</p>
-        </div>
+            {% endfor %}
+        {% endif %}
     </div>
+    
 
 {% endblock content %}
