@@ -18,6 +18,19 @@
   .ButtonGantiPass{
     cursor: pointer;
   }
+
+  .TombolPutih{
+    background-color: white;
+    transition: all ease 0.3s;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+  }
+
+  .TombolPutih:hover{
+    background-color: #f2f2f2;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.8);
+  }
+
+
 {% endblock %}
 
 {% block body %}
@@ -59,7 +72,7 @@
             <form action="{{url_for('user.change_profile_picture')}}" method="POST" enctype="multipart/form-data" id="changeProfileForm">
               <input type="file" name="profile" style="display: none;" id="profileInput">
             </form>
-            <button class="border-0 font-weight-bold px-5 py-2 rounded-xl bg-white mt-3 textijo" id="gantiFoto">Ganti Foto</button>
+            <button class="border-0 font-weight-bold px-5 py-2 rounded-xl TombolPutih mt-3 textijo" id="gantiFoto">Ganti Foto</button>
           </div>
         </div>
         <form action="{{url_for('user.edit')}}" method="POST" class="w-50 d-flex mr-5 align-items-center justify-content-center">
@@ -84,11 +97,11 @@
 
             <div class="d-flex mt-2 justify-content-between w-100">
               <div>
-                <div class="ButtonGantiPass border-0 text-center font-weight-bold w-15 py-2 rounded-xl bg-white textijo">Ganti Password</div>
+                <div class="ButtonGantiPass  border-0 text-center font-weight-bold w-15 py-2 rounded-xl TombolPutih textijo">Ganti Password</div>
               </div>
 
               <div>
-                <button type="submit" class="border-0 font-weight-bold px-5 py-2 rounded-xl bg-white textijo">Simpan</button>
+                <button type="submit" class="border-0 font-weight-bold px-5 py-2 rounded-xl TombolPutih textijo">Simpan</button>
               </div>
             </div>
           </div>

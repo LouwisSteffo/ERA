@@ -1,6 +1,6 @@
 {% extends 'redeem/layout.html'  %}
 
-{% block title %}Penukaran Poin{% endblock title %}
+{% block title %}<title>Penukaran Poin</title>{% endblock title %}
 
 {% block link %}
   <link href="{{ url_for('static', filename ='css/redeem/redeem.css') }}" rel="stylesheet" />
@@ -143,6 +143,10 @@
         </div>
         `);
         $('.CloseButton').click();
+
+        setTimeout(function(){
+          location.reload();
+        }, 1000);
       } else {
         //window.location.reload();
         $('.CloseButton').click();
@@ -158,6 +162,9 @@
         </div>
 
         `);
+        setTimeout(function(){
+          location.reload();
+        }, 3000);
       }
     })
     .catch(error => {
