@@ -76,3 +76,17 @@ class Transaksi_Penjemputan(db.Model , UserMixin):
     @property
     def lokasi_detail(self):
         return Lokasi.query.filter_by(id=self.id_lokasi).first()
+class Redeem(db.Model, UserMixin):
+    _tablename_ = 'redeem'
+    id = db.Column(db.Integer, primary_key=True)
+    id_pengguna = db.Column(db.Integer, db.ForeignKey('pengguna.id'), nullable=False)
+    id_kupon = db.Column(db.Integer, db.ForeignKey('kupon.id'), nullable=False)
+    waktu_ditukar = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    
+    @property
+    def harga_kupon(self):
+        return Kupon.query.filter_by(id=self.id_kupon).first()
+    
+    @property
+    def poin_user(self):
+        return Pengguna.query.filter_by(id=self.id).first()

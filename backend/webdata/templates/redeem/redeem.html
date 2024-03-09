@@ -1,12 +1,45 @@
-{% extends 'layout.html'  %}
+{% extends 'redeem/layout.html'  %}
 
 {% block title %}Penukaran Poin{% endblock title %}
 
-{% block style %}
+{% block link %}
   <link href="{{ url_for('static', filename ='css/redeem/redeem.css') }}" rel="stylesheet" />
-{% endblock style %}
+{% endblock %}
+
+{% block style %}
+#alertTop {
+  position: fixed;
+  z-index: 1000;
+  bottom: 2vh;
+  left: 5vh;
+  width: 90vw;
+  transition: all ease-in 0.3s;
+}
+{% endblock %}
 
 {% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div id="alertTop" class="auto-close-alert">
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-{{category}}">
+            {{message}}
+            <!-- <script>
+              console.log("{{message}}");
+            </script> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+    <div id="temp">
+
+    </div>
     <div class="card bg-dark text-white mt-4">
       <img class="card-img" src="{{ url_for('static', filename='img/redeem/redeem.png') }}" alt="Card image" />
       <div class="card-img-overlay">
@@ -17,54 +50,125 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-auto">Poin:</div>
-        <div class="col-md-auto"> <b>900</b> poin</div>
+        
+        <div class="col-md-auto"> {{ current_user.poin }} poin</div>
+
       </div>
     </div>
 
-    <!-- Projects -->
     <div class="media-scroller snaps-inline">
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
+      {% for kupon in allKupon %}
+        {% if kupon.jumlah_kupon > 0 %}
+          <button class="border-0 ButtonRedeem" onclick="tukarPoin({{ kupon.id }})">
+            <div class="media-element">
+              <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem' + loop.index|string + '.png') }}" alt="" />
+              <p class="title">{{ kupon.harga_kupon }} poin</p>
+            </div>
+          </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+   
 
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
+    <div class="modal fade" id="modalTukarPoin" tabindex="-1" aria-labelledby="modalTukarPoinLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modalTukarPoinLabel">Tukar Poin</h5>
+              </div>
+              <div class="modal-body d-flex flex-column">
+                  <p>Apakah Kamu Yakin untuk Menukarkan Poin?</p>    
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="CloseButton btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                  <button type="button" class="btn btn-success WarnaHijau text-white" onclick="setujuTukarPoin()">Setuju</button>
+              </div>
+          </div>
       </div>
+    </div>
 
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
-
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
-
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
-
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
-
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
-
-      <div class="media-element">
-        <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem2.png') }}" alt="" />
-        <p class="title">50 Poin</p>
-      </div>
-      </div>
-    <!-- Akhir Projects -->
 {% endblock content %}
 
-  </body>
-</html>
+{% block script %}
+<script>
+  function tukarPoin(idKupon) {
+    // Store the coupon ID in local storage
+    localStorage.setItem('tukarPoinIdKupon', idKupon);
+
+    // Display the modal for confirmation
+    $('#modalTukarPoin').modal('show');
+  }
+
+  function setujuTukarPoin() {
+    // Get the coupon ID from local storage
+    var idKupon = localStorage.getItem('tukarPoinIdKupon');
+
+    // Get the user's points from the rendered template
+    var userPoin = {{ current_user.poin }};
+
+    // Check if the user has enough points to redeem the coupon
+
+    // Create a JSON object with user ID and coupon ID
+    var data = {
+      user_id: "{{ current_user.id }}",
+      id_kupon: idKupon
+    };
+
+    // Convert the JSON object to a string
+    var jsonData = JSON.stringify(data);
+
+    // Send the JSON data to the endpoint
+    fetch('/redeem/tukar_poin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Include any additional headers if required
+      },
+      body: jsonData
+    })
+    .then(response => {
+      if (response.ok) {
+        //console.log(response.body);
+        // Successful response, handle accordingly
+        //window.location.reload(); // Reload the page to reflect the updated points
+        $('#temp').html(`
+        <div id="alertTop" class="auto-close-alert">
+          <div class="row">
+            <div class="col">
+              <div class="alert alert-success">
+                Coupon redeemed successfully!
+              </div>
+            </div>
+          </div>
+        </div>
+        `);
+        $('.CloseButton').click();
+      } else {
+        //window.location.reload();
+        $('.CloseButton').click();
+        $('#temp').html(`
+        <div id="alertTop" class="auto-close-alert">
+          <div class="row">
+            <div class="col">
+              <div class="alert alert-danger">
+                Coupon redeem failed, try again later!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        `);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+
+  $(document).ready(function(){
+    $('.CloseButton').click(function(){
+        $('#modalTukarPoin').modal('hide');
+    });
+  });
+</script>
+{% endblock %}
