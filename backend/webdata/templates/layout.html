@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
 
-    {% block title %}{% endblock title %}
+    <title>{% block title %}{% endblock title %}</title>
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
@@ -266,4 +266,9 @@
    <script src="{{ url_for('static', filename ='js/main.js') }}"></script>
     {% block script %}{% endblock script %}
     </body>
+    <script>
+      setTimeout(function() {
+        document.getElementById('alertTop').style.display = 'none';
+      }, 3000);
+    </script>
 </html>

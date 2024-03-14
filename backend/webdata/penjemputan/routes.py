@@ -79,4 +79,7 @@ def tambah_transaksi(id_ekspedisi, id_lokasi):
     # Flashnya g keluar
     flash('Transaksi Berhasil', 'success')
     
-    return redirect(url_for('penjemputan.pilih_layanan'))
+    if id_ekspedisi == 0:
+        return redirect(url_for('dashboard.dalam_proses'))
+    else:
+        return redirect(url_for('dashboard.index'))

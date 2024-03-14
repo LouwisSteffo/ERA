@@ -2,7 +2,35 @@
 
 {% block title %}Dashboard{% endblock title %}
     
+{% block style %}
+<style>
+#alertTop {
+    position: fixed;
+    z-index: 1000;
+    bottom: 2vh;
+    left: 5vh;
+    width: 90vw;
+    transition: all ease-in 0.3s;
+  }
+</style>
+{% endblock style %}
+
 {% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div id="alertTop" class="auto-close-alert">
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-{{category}}">
+            {{message}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
     <div class="d-flex justify-content-center align-items-center w-100">
         <div
             class=" ContainerGap d-flex p-4 justify-content-between flex-row align-items-center bg-white shadow-lg rounded w-75">
@@ -19,25 +47,25 @@
                 <a class="link-dark" href="{{ url_for('dashboard.index') }}">
                     Dalam Antrean
                 </a>
-                <h2>0</h2>
+                <h2>{{count1}}</h2>
             </div>
             <div class="shadow DalamProses d-flex flex-column align-items-center justify-content-center w-20 WarnaHijau rounded-xl">
                 <a class="link-light" href="{{ url_for('dashboard.dalam_proses') }}">
                     Dalam Proses
                 </a>
-                <h2 class="text-white">0</h2>
+                <h2 class="text-white">{{count2}}</h2>
             </div>
             <div class="shadow Selesai d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
                 <a class="link-dark" href="{{ url_for('dashboard.selesai') }}">
                     Selesai
                 </a>
-                <h2>0</h2>
+                <h2>{{count3}}</h2>
             </div>
             <div class="shadow Pembatalan d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
                 <a class="link-dark" href="{{ url_for('dashboard.batal') }}">
                     Batal
                 </a>
-                <h2>0</h2>
+                <h2>{{count4}}</h2>
             </div>
         </div>
     </div>
@@ -65,9 +93,52 @@
                         {% endif %}
                     </div>
                 </div>
-                <p class="text-warning mr-3 h-100 mt-7">Dalam Proses</p>
+                <div>
+                    <p class="text-warning mr-3 h-100 mt-5">Dalam Proses</p>
+                        <button class="ButtonBatalkan btn btn-danger" >
+                            Batalkan
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="modal fade" id="modalBatalkan" tabindex="-1" aria-labelledby="modalGantiPassLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalGantiPassLabel">Keluar</h5>
+                        </div>
+                        <div class="modal-body d-flex flex-column">
+                            <p>Apakah Kamu Yakin Untuk Keluar?</p>    
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="CloseButton btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <a href="{{ url_for('dashboard.membatalkan', id=transaksi.id) }}" type="button" class="btn btn-success WarnaHijau text-white">Setuju</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             {% endfor %}
         {% endif %}
+
+        <!-- Modal -->
+    
     </div>
 {% endblock content %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('.ButtonBatalkan').click(function(){
+            $('#modalBatalkan').modal('show');
+        });
+    });
+
+    $(document).ready(function(){
+        $('.CloseButton').click(function(){
+            $('#modalBatalkan').modal('hide');
+        });
+    });
+</script>  
+{% endblock script %}
