@@ -1,5 +1,7 @@
 {% extends 'user/layout.html' %}
 
+{% block title %} Edit Profil {% endblock %}
+
 {% block style %}
   .textijo{ 
     color: #299e63;
@@ -52,11 +54,6 @@
   <div class="w-100 d-flex align-items-center justify-content-center flex-column" style="margin-bottom: 100px;">
     <div class="d-flex h-100 flex-column justify-content-center w-75" style="margin-top: 100px; margin-bottom:70px;">
       <div class="d-flex align-items-center">
-        <a href="{{url_for('user.profile')}}" class="px-3 py-3 rounded-xl font-weight-bold WarnaHijau text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-              </svg>
-        </a>
         <h1 class="mb-0 ml-3 font-weight-bold">Edit Akun</h1>
       </div>
       <div class="mt-3 WarnaHijau shadow p-4 RoundedCustom d-flex justify-content-evenly align-items-center">
@@ -97,7 +94,7 @@
 
             <div class="d-flex mt-2 justify-content-between w-100">
               <div>
-                <div class="ButtonGantiPass  border-0 text-center font-weight-bold w-15 py-2 rounded-xl TombolPutih textijo">Ganti Password</div>
+                <div class="ButtonGantiPass  border-0 text-center font-weight-bold w-15 py-2 rounded-xl TombolPutih textijo">Ganti Kata Sandi</div>
               </div>
 
               <div>

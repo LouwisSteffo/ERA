@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
-
-{% block title %}<title>Beranda</title>{% endblock title %}
+{% block title %}Beranda{% endblock title %}
     
 {% block style %}
 <style>
@@ -14,10 +13,35 @@
   .GreenColor:hover{
       background-color: #2eca7c;
   }
+  #alertTop {
+    position: fixed;
+    z-index: 1000;
+    bottom: 2vh;
+    left: 5vh;
+    width: 90vw;
+    transition: all ease-in 0.3s;
+  }
 </style>
 {% endblock style %}
 
 {% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div id="alertTop" class="auto-close-alert">
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-{{category}}">
+            {{message}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+
     <!-- Header Start -->
     <div class="container-fluid header bg-success p-0 mb-5">
       <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
@@ -30,7 +54,7 @@
                   <img src="{{url_for('static' , filename ='img/homepage/era.png')}}" style="width:fit-content;" />
                 </div>
                 <div class="title" style="width: 40%;">
-                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">ERA : Sahabat Sobat Pencinta Alam!</p>
                 </div>
               </div>
             </div>
@@ -41,7 +65,7 @@
                   <img src="{{url_for('static' , filename ='img/homepage/era.png')}}" />
                 </div>
                 <div class="title" style="width: 40%;">
-                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">ERA : Sahabat Sobat Pencinta Alam!</p>
                 </div>
               </div>
             </div>
@@ -52,7 +76,7 @@
                   <img src="{{url_for('static' , filename ='img/homepage/era.png')}}" />
                 </div>
                 <div class="title" style="width: 40%;">
-                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptates!</p>
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">ERA : Sahabat Sobat Pencinta Alam!</p>
                 </div>
               </div>
             </div>
@@ -120,9 +144,11 @@
             box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
           </div>
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">ERA memberikan pilihan layanan kurir untuk mengangkut, mengirim, dan membayar sampah elektronik Anda dengan harga yang menguntungkan. Pembayaran akan dilakukan setelah barang sampah elektronik tiba di Tempat Pemrosesan Sementara (TPS).</p>
             <div class="col-12">
+              <a href="{{url_for('penjemputan.index')}}">
               <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Jadwalkan Penjemputan</button>
+              </a>
             </div>
           </div>
         </div>
@@ -140,9 +166,11 @@
         <!-- Ini Isi Tiap Layanan -->
         <div class="row g-4" style="height: 30em;">
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Tidak hanya penjemputan, Ada artikel tentang pengolahan sampah elektronik juga loh.</p>
             <div class="col-12">
+              <a href="{{url_for('artikel.index')}}">
               <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Baca Artikel</button>
+              </a>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -172,10 +200,12 @@
           </div>
 
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">ERA juga nyediaiin gimana caranya mengolah limbah elektronik</p>
             <div class="col-12">
-              <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Lihat Rekomendasi</button>
-            </div>
+              <a href="{{url_for('rekomendasi.index')}}">
+                <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Lihat Rekomendasi</button>
+              </a>
+              </div>
           </div>
         </div>
       </div>
@@ -192,9 +222,11 @@
         <!-- Ini Isi Tiap Layanan -->
         <div class="row g-4" style="height: 30em;">
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Tukarkan Poinmu Dengan Kupon-kupon menarik!</p>
             <div class="col-12">
-              <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Tukar Poin</button>
+              <a href="{{url_for('redeem.redeem_poin')}}">
+                <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Tukar Poin</button>
+              </a>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -207,3 +239,11 @@
     </div>
     <!-- Penukaran Poin End -->
 {% endblock content %}
+
+{% block script %}
+<script>
+  setTimeout(function() {
+    document.getElementById('alertTop').style.display = 'none';
+  }, 3000);
+</script>
+{% endblock script %}
