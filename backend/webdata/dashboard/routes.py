@@ -58,7 +58,7 @@ def membatalkan(id):
     
     transaksi.status_transaksi = 'Dibatalkan'
     db.session.commit()
-    flash('Transaksi berhasil dibatalkan', 'warning')
+    flash('Transaksi berhasil dibatalkan', 'success')
     return redirect(url_for('dashboard.dalam_proses'))
 
 @dashboard.route('/membatal/<int:id>')

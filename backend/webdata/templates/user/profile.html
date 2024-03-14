@@ -15,22 +15,22 @@
     cursor: pointer;
 }
 
-.WarnaHijau:hover{
-    background-color: #2eca7c;
-}
-
 .BgPutih{
     background-color: white;
     transition: 0.3s ease;
 }
 
 .BgPutih:hover{
-    background-color: #299e63;
+    background-color: #2eca7c;
     color: white;
 }
 
 .BgPutih:hover p{
     color: white;
+}
+
+.hijauHover:hover{
+    background-color: #2eca7c;
 }
 
 {% endblock style %}
@@ -124,9 +124,10 @@
     </a>
     
     <!-- create button to trigger Logout modal -->
-    <button class="ButtonGantiPass WarnaHijau px-5 py-2 mt-5 rounded-xl border-0">
+    <button class="ButtonGantiPass WarnaHijau hijauHover px-5 py-2 mt-5 rounded-xl border-0 shadow">
         <h5 class="mb-0 text-white h4">Keluar</h5>
     </button>
+    <!-- <button class="ButtonGantiPass btn btn-success rounded-5 shadow-custom py-3 mt-" type="submit" style="width: auto;">Keluar</button> -->
 
     <!-- Modal -->
     <div class="modal fade" id="modalGantiPass" tabindex="-1" aria-labelledby="modalGantiPassLabel" aria-hidden="true">

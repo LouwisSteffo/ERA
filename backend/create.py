@@ -18,10 +18,10 @@ def main():
     # Ekspedisi3 = Ekspedisi(id = 3, nama_ekspedisi = "GrabExpress")
     # Ekspedisi4 = Ekspedisi(id = 4, nama_ekspedisi = "Gosend")
     
-    # Kupon1 = Kupon(id = 1, nama_kupon = "Kupon Gopay", harga_kupon = 100 , gambar_kupon = "..", jumlah_kupon = 1500)
-    Kupon2 = Kupon(id = 2, nama_kupon = "Kupon Shopeepay", harga_kupon = 150 , gambar_kupon = "..", jumlah_kupon = 1500)
-    Kupon3 = Kupon(id = 3, nama_kupon = "Kupon OVO", harga_kupon = 100 , gambar_kupon = "..", jumlah_kupon = 1500)
-    Kupon4 = Kupon(id = 4, nama_kupon = "Kupon DANA", harga_kupon = 100 , gambar_kupon = "..", jumlah_kupon = 1500)
+    Kupon1 = Kupon(id = 5, nama_kupon = "Kupon Gopay", harga_kupon = 100 , gambar_kupon = "..", jumlah_kupon = 1500)
+    Kupon2 = Kupon(id = 6, nama_kupon = "Kupon Shopeepay", harga_kupon = 150 , gambar_kupon = "..", jumlah_kupon = 1500)
+    Kupon3 = Kupon(id = 7, nama_kupon = "Kupon OVO", harga_kupon = 100 , gambar_kupon = "..", jumlah_kupon = 1500)
+    Kupon4 = Kupon(id = 8, nama_kupon = "Kupon DANA", harga_kupon = 100 , gambar_kupon = "..", jumlah_kupon = 1500)
     
     # db.session.add(Lokasi1)
     # db.session.add(Lokasi2)
@@ -33,7 +33,7 @@ def main():
     # db.session.add(Ekspedisi3)
     # db.session.add(Ekspedisi4)
     
-    # db.session.add(Kupon1)
+    db.session.add(Kupon1)
     db.session.add(Kupon2)
     db.session.add(Kupon3)
     db.session.add(Kupon4)
