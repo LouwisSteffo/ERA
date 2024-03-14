@@ -57,7 +57,7 @@ def signuppost():
     new_user = Pengguna(username=username, nama_pengguna=nama, email=email, nomor_telepon=nomor_telepon, password=hashed_password)
     db.session.add(new_user)
     db.session.commit()
-    flash('Akun berhasil dibuat Silahkan login terlebih dahulu', 'success')
+    flash('Akun berhasil dibuat! Silahkan login terlebih dahulu', 'success')
     
     return redirect(url_for('main.login'))
     
