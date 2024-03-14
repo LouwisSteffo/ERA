@@ -16,7 +16,6 @@ def index():
 @login_required
 def redeem_poin():
     allKupon = Kupon.query.all()
-    # flash("This works", "danger")
 
     return render_template('redeem/redeem.html' , allKupon = allKupon)
 
@@ -51,7 +50,8 @@ def tukar_poin():
     # Check if the user has enough points to redeem the coupon
     if pengguna.poin < kupon.harga_kupon:
         # flash('Insufficient points', 'error')
-        return jsonify({'message' : "Insufficient points."}), 400
+        # return jsonify({'message' : "Insufficient points."}), 400
+        return jsonify({'message' : "Poin tidak mencukupi"}), 400
     
     # Decrease the user's points
     pengguna.poin -= kupon.harga_kupon
@@ -71,7 +71,8 @@ def tukar_poin():
     # flash('Coupon redeemed successfully!', 'success')
 
     # Redirect to the redeem page
-    return jsonify({'message' : "Coupon redeemed succesfully!"}), 200
+    # return jsonify({'message' : "Coupon redeemed succesfully!"}), 200
+    return jsonify({'message' : "Poin berhasil ditukarkan!"}), 200
 
 
     
