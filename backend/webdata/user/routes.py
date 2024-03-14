@@ -64,7 +64,7 @@ def delete_image(filename, upload_folder):
 @login_required
 def logout():
     logout_user()
-    flash("Berhasil logout", "warning")
+    flash("Logout Berhasil", "warning")
     return redirect(url_for('main.login'))
 
 @user.route('/profile')

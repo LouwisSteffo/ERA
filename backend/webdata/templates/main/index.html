@@ -54,7 +54,7 @@
                   <img src="{{url_for('static' , filename ='img/homepage/era.png')}}" style="width:fit-content;" />
                 </div>
                 <div class="title" style="width: 40%;">
-                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">ERA : Sahabat Sobat Pencinta Alam!</p>
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Bingung bagaimana mengelola limbah elektronik kamu?</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
                   <img src="{{url_for('static' , filename ='img/homepage/era.png')}}" />
                 </div>
                 <div class="title" style="width: 40%;">
-                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">ERA : Sahabat Sobat Pencinta Alam!</p>
+                  <p style="font-size: x-large; color: #ffff; text-align: center; font-weight: 600px;">Aplikasi pengelolaan limbah elektronik di Indonesia untuk menyelesaikan permasalahan limbah elektronik kamu</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="rounded h-100 p-5 GreenColor" style=" text-align: center; margin-right: 10%;">
               <img src="{{url_for('static' , filename='img/homepage/penjemputanbarang.png')}}" class="img-thumbnail" alt="" />
-              <h4 class="mb-3" style="color: white; margin-top: 20px">Penjemputan Barang</h4>
+              <h4 class="mb-3" style="color: white; margin-top: 20px">Penjemputan</h4>
             </div>
           </div>
 
@@ -135,7 +135,7 @@
       <div class="container">
         <!-- Ini Judul Tiap Layanan -->
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: -3%;">
-          <h1 style="color: #299e63; margin-top: 5%;">Penjemputan Barang</h1>
+          <h1 style="color: #299e63; margin-top: 5%;">Penjemputan</h1>
         </div>
         <!-- Ini Isi Tiap Layanan -->
         <div class="row g-4" style="height: 30em;">
@@ -143,8 +143,9 @@
             <img src="{{url_for('static' , filename='img/homepage/penjemputanbarang2.jpg')}}" class="rounded-circle" style="width: 25em; height: 25em; margin-left: 100px;
             box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
           </div>
-          <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">ERA memberikan pilihan layanan kurir untuk mengangkut, mengirim, dan membayar sampah elektronik Anda dengan harga yang menguntungkan. Pembayaran akan dilakukan setelah barang sampah elektronik tiba di Tempat Pemrosesan Sementara (TPS).</p>
+          <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px; display:flex; flex-direction:column; align-items: center;" data-wow-delay="0.1s">
+            <p style="color: black;display: flex;flex-direction: column; justify-content: center;text-align: left;">Tidak perlu repot untuk mengantarkan limbah elektronikmu! Dengan ERA kamu bisa jadwalkan penjemputan untuk limbah elektronikmu 👍
+              <br>Ayo jadwalkan sekarang!</p>
             <div class="col-12">
               <a href="{{url_for('penjemputan.index')}}">
               <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Jadwalkan Penjemputan</button>
@@ -200,7 +201,8 @@
           </div>
 
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">ERA juga nyediaiin gimana caranya mengolah limbah elektronik</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">Masih bingung bagaimana mengolah limbah elektronik yang kamu punya? Jangan takut! Disini kamu bisa membaca tentang rekomendasi pengelolaan limbah elektronik yang kamu miliki! 
+              Yuk lihat rekomendasi rekomendasinya!</p>
             <div class="col-12">
               <a href="{{url_for('rekomendasi.index')}}">
                 <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Lihat Rekomendasi</button>
@@ -222,7 +224,7 @@
         <!-- Ini Isi Tiap Layanan -->
         <div class="row g-4" style="height: 30em;">
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Tukarkan Poinmu Dengan Kupon-kupon menarik!</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Di ERA kamu juga bisa menukarkan poin yang kamu dapatkan setelah memberi limbah elektronik yang kamu punya menjadi beberapa hadiah yang tersedia sesuai poin yang kamu miliki!</p>
             <div class="col-12">
               <a href="{{url_for('redeem.redeem_poin')}}">
                 <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Tukar Poin</button>

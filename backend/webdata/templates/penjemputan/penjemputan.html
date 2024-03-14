@@ -17,8 +17,8 @@
         <div class="col-4 kiri">
           <p style="font-family: Inter; color: #299e63">Mau Tambah <br />Pemasukan ?</p>
           <h4>Ubah barang elektronik bekas Anda menjadi uang.</h4>
-          <a class="border-0 btn SpecificButton btn-success" style="box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25)" type="submit">
-            <p class="link-light text-decoration-none mt-1" href="{{ url_for('penjemputan.pilih_layanan') }}">Jadwalkan Pengangkutan</p>
+          <a class="border-0 btn SpecificButton btn-success" style="box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25)" href="{{ url_for('penjemputan.pilih_layanan') }}" type="submit">
+            <p class="link-light text-decoration-none mt-1">Jadwalkan Pengangkutan</p>
           </a>
         </div>
         <div class="col-4 kanan">
@@ -66,7 +66,7 @@
           ERA memberikan pilihan layanan kurir untuk mengangkut, mengirim, dan membayar sampah elektronik Anda dengan harga yang menguntungkan. Pembayaran akan dilakukan setelah barang sampah elektronik tiba di Tempat Pemrosesan Sementara
           (TPS).
         </h4>
-        <a href="{{ url_for('penjemputan.pilih_layanan') }}">
+        <a href="">
           <button class="border-0 btn SpecificButtonLayanan btn-success" style="box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25)" type="submit">Selengkapnya</button>
         </a>
         </div>
@@ -74,7 +74,7 @@
         <i class="bi bi-person-fill"></i>
         <p>Antar Sendiri</p>
         <h4>Kirimkan sendiri barang-barang elektronik bekasmu ke TPS terdekat, dan ERA akan segera melakukan verifikasi serta memberikan pembayaran sesuai dengan nilai terbaik untuk limbah elektronik yang kamu kirimkan.</h4>
-        <a href="{{ url_for('penjemputan.pilih_layanan') }}">
+        <a href="">
           <button class="border-0 btn SpecificButtonLayanan btn-success" style="box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25)" type="submit">Selengkapnya</button>
         </a>
         </div>
