@@ -144,8 +144,8 @@
             box-shadow: 4px 6px 6px 0px rgba(0, 0, 0, 0.25);" alt="" />
           </div>
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px; display:flex; flex-direction:column; align-items: center;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column; justify-content: center;text-align: left;">Tidak perlu repot untuk mengantarkan limbah elektronikmu! Dengan ERA kamu bisa jadwalkan penjemputan untuk limbah elektronikmu 👍
-              <br>Ayo jadwalkan sekarang!</p>
+            <p style="color: black;display: flex;flex-direction: column; justify-content: center;text-align: left;" class="text-center">Tidak perlu repot untuk mengantarkan limbah elektronikmu!<br> Dengan ERA kamu bisa jadwalkan penjemputan untuk limbah elektronikmu 👍
+              <br><br>Ayo jadwalkan sekarang!</p>
             <div class="col-12">
               <a href="{{url_for('penjemputan.index')}}">
               <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Jadwalkan Penjemputan</button>
@@ -167,7 +167,8 @@
         <!-- Ini Isi Tiap Layanan -->
         <div class="row g-4" style="height: 30em;">
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Tidak hanya penjemputan, Ada artikel tentang pengolahan sampah elektronik juga loh.</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: center;" class="text-center">Dengan ERA tidak hanya untuk menjemput limbah elektronikmu! Ingin menambah ilmu tentang limbah elektronik? Kamu bisa membaca artikel-artikel tentang limbah elektronik juga loh!
+              Yuk baca artikel tentang limbah elektronik!</p>
             <div class="col-12">
               <a href="{{url_for('artikel.index')}}">
               <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Baca Artikel</button>
@@ -201,7 +202,7 @@
           </div>
 
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;">Masih bingung bagaimana mengolah limbah elektronik yang kamu punya? Jangan takut! Disini kamu bisa membaca tentang rekomendasi pengelolaan limbah elektronik yang kamu miliki! 
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: left;" class="text-center">Masih bingung bagaimana mengolah limbah elektronik yang kamu punya? <br>Jangan takut! Disini kamu bisa membaca tentang rekomendasi pengelolaan limbah elektronik yang kamu miliki! 
               Yuk lihat rekomendasi rekomendasinya!</p>
             <div class="col-12">
               <a href="{{url_for('rekomendasi.index')}}">
@@ -224,7 +225,7 @@
         <!-- Ini Isi Tiap Layanan -->
         <div class="row g-4" style="height: 30em;">
           <div class="col-lg-6 col-md-6 wow fadeInUp" style="margin-top: 5%; width: 40%; text-align: center;font-size: 25px;" data-wow-delay="0.1s">
-            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;">Di ERA kamu juga bisa menukarkan poin yang kamu dapatkan setelah memberi limbah elektronik yang kamu punya menjadi beberapa hadiah yang tersedia sesuai poin yang kamu miliki!</p>
+            <p style="color: black;display: flex;flex-direction: column;justify-content: center;text-align: right;" class="text-center">Di ERA kamu juga bisa menukarkan poin yang kamu dapatkan setelah memberi limbah elektronik yang kamu punya menjadi beberapa hadiah yang tersedia sesuai poin yang kamu miliki!</p>
             <div class="col-12">
               <a href="{{url_for('redeem.redeem_poin')}}">
                 <button class="border-0 btn SpecificButton btn-success w-100 py-3" type="submit">Tukar Poin</button>

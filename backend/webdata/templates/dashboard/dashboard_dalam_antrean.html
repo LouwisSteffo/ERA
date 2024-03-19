@@ -12,6 +12,15 @@
     width: 90vw;
     transition: all ease-in 0.3s;
   }
+
+.dashboard_status{
+    background-color: white;
+
+}
+
+.dashboard_status:hover{
+    background-color: #f8f8f8;
+}
 </style>
 {% endblock style %}
 
@@ -49,19 +58,19 @@
                 </a>
                 <h2 class="text-white">{{count1}}</h2>
             </div>
-            <div class="shadow DalamProses d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
+            <div class="shadow DalamProses d-flex flex-column align-items-center justify-content-center w-20  rounded-xl dashboard_status">
                 <a class="link-dark" href="{{ url_for('dashboard.dalam_proses') }}">
                     Dalam Proses
                 </a>
                 <h2>{{count2}}</h2>
             </div>
-            <div class="shadow Selesai d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
+            <div class="shadow Selesai d-flex flex-column align-items-center justify-content-center w-20  rounded-xl dashboard_status">
                 <a class="link-dark" href="{{ url_for('dashboard.selesai') }}">
                     Selesai
                 </a>
                 <h2>{{count3}}</h2>
             </div>
-            <div class="shadow Pembatalan d-flex flex-column align-items-center justify-content-center w-20 bg-white rounded-xl">
+            <div class="shadow Pembatalan d-flex flex-column align-items-center justify-content-center w-20  rounded-xl dashboard_status">
                 <a class="link-dark" href="{{ url_for('dashboard.batal') }}">
                     Batal
                 </a>

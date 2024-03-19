@@ -19,24 +19,6 @@
 
 {% block content %}
 
-{% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-  {% for category, message in messages %}
-    <div id="alertTop" class="auto-close-alert">
-      <div class="row">
-        <div class="col">
-          <div class="alert alert-{{category}}">
-            {{message}}
-            <!-- <script>
-              console.log("{{message}}");
-            </script> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-{% endif %}
-{% endwith %}
     <div id="temp">
 
     </div>
@@ -61,7 +43,8 @@
         {% if kupon.jumlah_kupon > 0 %}
           <button class="border-0 ButtonRedeem" onclick="tukarPoin({{ kupon.id }})">
             <div class="media-element">
-              <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem' + loop.index|string + '.png') }}" alt="" />
+              <!-- <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem' + loop.index|string + '.png') }}" alt="" /> -->
+              <img class="voucher-image" src="{{ url_for('static', filename='img/redeem/redeem' + '1' + '.png') }}" alt="" />
               <p class="title">{{ kupon.harga_kupon }} poin</p>
             </div>
           </button>
@@ -77,7 +60,7 @@
                   <h5 class="modal-title" id="modalTukarPoinLabel">Tukar Poin</h5>
               </div>
               <div class="modal-body d-flex flex-column">
-                  <p>Apakah Kamu Yakin untuk Menukarkan Poin?</p>    
+                  <p>Apakah kamu yakin untuk menukarkan poin?</p>    
               </div>
               <div class="modal-footer">
                   <button type="button" class="CloseButton btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -136,7 +119,8 @@
           <div class="row">
             <div class="col">
               <div class="alert alert-success">
-                Coupon redeemed successfully!
+               <!-- Coupon redeemed successfully! -->
+                Kupon berhasil ditukarkan!
               </div>
             </div>
           </div>
@@ -155,16 +139,15 @@
           <div class="row">
             <div class="col">
               <div class="alert alert-danger">
-                Coupon redeem failed, try again later!
+                <!-- Coupon redeem failed, try again later! -->
+                Penukaran poin gagal!
               </div>
             </div>
           </div>
         </div>
 
         `);
-        setTimeout(function(){
-          location.reload();
-        }, 3000);
+      
       }
     })
     .catch(error => {

@@ -64,7 +64,7 @@ def delete_image(filename, upload_folder):
 @login_required
 def logout():
     logout_user()
-    flash("Logout Berhasil", "warning")
+    flash("Logout Berhasil", "success")
     return redirect(url_for('main.login'))
 
 @user.route('/profile')
@@ -109,7 +109,7 @@ def edit():
     
     db.session.commit()
 
-    flash('Profile berhasil diubah', 'success')
+    flash('Profil berhasil diubah', 'success')
     return redirect(url_for('user.edit_profile'))
 
 @user.route('/ganti_password')
@@ -130,26 +130,26 @@ def change():
         return redirect(url_for('user.ganti_password'))
     
     if not bcrypt.check_password_hash(user.password, passwordlama):
-        flash('Password salah', 'danger')
+        flash('Kata sandi salah', 'danger')
         return redirect(url_for('user.ganti_password'))
     
     
     if passwordbaru != konfirmasipassword:
-        flash('Password tidak sama', 'danger')
+        flash('Kata sandi tidak sama', 'danger')
         return redirect(url_for('user.ganti_password'))
     
     hashed_password = bcrypt.generate_password_hash(passwordbaru).decode('utf-8')
     user.password = hashed_password
     db.session.commit()
     
-    flash('Password berhasil diubah', 'success')
+    flash('Kata sandi berhasil diubah', 'success')
     return redirect(url_for('user.edit_profile'))
 
 @user.route('/temp', methods=['POST', 'GET'])
 def temp():
     if request.method == 'POST':
         if 'profile' not in request.files:
-            flash("Profile picture not included.", "danger")
+            flash("Foto profil tidak ditemukan", "danger")
             return redirect(url_for("user.temp"))
 
         file = request.files['profile']
@@ -157,7 +157,7 @@ def temp():
         filename = process_and_save_image(file, app.config['UPLOAD_FOLDER'])
         
         if filename is None:
-            flash("File format not accepted.", "danger")
+            flash("Format file tidak sesuai", "danger")
             return redirect(url_for("user.temp"))
         
         flash("Ok success", "success")
@@ -168,7 +168,7 @@ def temp():
 @user.route('/change_profile_picture', methods=['POST'])
 def change_profile_picture():
     if 'profile' not in request.files:
-        flash("Profile picture not included.", "danger")
+        flash("Foto profil tidak ditemukan", "danger")
         return redirect(url_for("user.edit_profile"))
 
     file = request.files['profile']
@@ -176,7 +176,7 @@ def change_profile_picture():
     filename = process_and_save_image(file, app.config['UPLOAD_FOLDER'])   
 
     if filename is None:
-        flash("File format not accepted.", "danger")
+        flash("Format file tidak sesuai", "danger")
         return redirect(url_for("user.edit_profile"))
     
     
@@ -184,7 +184,7 @@ def change_profile_picture():
     user = Pengguna.query.get(current_user.id)
     user.foto_profil = filename
     db.session.commit()
-    flash("Profile picture changed successfully.", "success")
+    flash("Foto profil berhasil diubah", "success")
     return redirect(url_for('user.edit_profile'))
 
 @user.route('/FAQ')
